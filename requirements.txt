@@ -1,0 +1,49 @@
+# Core web framework - MIGRATED TO DJANGO
+Django==4.2.7
+djangorestframework==3.14.0
+
+# Template engine (Django built-in)
+# Jinja2==3.1.2 (replaced by Django templates)
+
+# Form handling and validation
+# WTForms==3.1.0 (replaced by Django forms)
+# Flask-WTF==1.2.1 (replaced by Django forms)
+
+# CORS support for API
+django-cors-headers==4.3.1
+
+# Environment variable management
+python-dotenv==1.0.0
+
+# OpenAI API for chatbot functionality - very stable old version
+openai==0.28.1
+
+# Email functionality (Django built-in)
+# Flask-Mail==0.9.1 (replaced by Django email)
+
+# JSON handling (enhanced)
+orjson==3.9.10
+
+# Security enhancements (Django built-in security + custom)
+django-csp==3.7
+
+# Logging and monitoring
+python-json-logger==2.0.7
+
+# HTTP client for health checks
+requests==2.31.0
+
+# Static files handling for production
+whitenoise==6.6.0
+
+# Development dependencies (optional)
+# Uncomment for development environment
+# django-debug-toolbar==4.2.0
+# pytest==7.4.3
+# pytest-django==4.7.0
+# black==23.11.0
+# flake8==6.1.0
+# mypy==1.7.1
+
+# Production WSGI server
+gunicorn==21.2.0 

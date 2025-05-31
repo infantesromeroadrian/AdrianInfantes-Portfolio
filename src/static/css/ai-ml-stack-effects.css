@@ -1,0 +1,115 @@
+/*
+AI/ML Stack Advanced Visual Effects
+Enhanced aesthetic styles for the restructured AI & ML technology stack
+*/
+
+/* Technology-specific color coding */
+.skill-legend-item[data-skill*="Python"] .skill-legend-color {
+    background: linear-gradient(45deg, #3776ab, #ffd43b);
+    border-color: #3776ab;
+}
+
+.skill-legend-item[data-skill*="PyTorch"] .skill-legend-color {
+    background: linear-gradient(45deg, #ee4c2c, #ff6b35);
+    border-color: #ee4c2c;
+}
+
+.skill-legend-item[data-skill*="TensorFlow"] .skill-legend-color {
+    background: linear-gradient(45deg, #ff6f00, #ffab00);
+    border-color: #ff6f00;
+}
+
+.skill-legend-item[data-skill*="OpenAI"] .skill-legend-color,
+.skill-legend-item[data-skill*="GPT"] .skill-legend-color {
+    background: linear-gradient(45deg, #10a37f, #1a7f64);
+    border-color: #10a37f;
+}
+
+.skill-legend-item[data-skill*="Gemini"] .skill-legend-color {
+    background: linear-gradient(45deg, #4285f4, #34a853);
+    border-color: #4285f4;
+}
+
+.skill-legend-item[data-skill*="LangChain"] .skill-legend-color {
+    background: linear-gradient(45deg, #1c3aa9, #5865f2);
+    border-color: #1c3aa9;
+}
+
+.skill-legend-item[data-skill*="Azure"] .skill-legend-color {
+    background: linear-gradient(45deg, #0078d4, #106ebe);
+    border-color: #0078d4;
+}
+
+.skill-legend-item[data-skill*="Docker"] .skill-legend-color {
+    background: linear-gradient(45deg, #2496ed, #0db7ed);
+    border-color: #2496ed;
+}
+
+.skill-legend-item[data-skill*="Kubernetes"] .skill-legend-color {
+    background: linear-gradient(45deg, #326ce5, #4285f4);
+    border-color: #326ce5;
+}
+
+/* Simple hover effect for skill items */
+.skill-legend-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+/* Interactive skill stats with enhanced animations */
+.skill-stat:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced loading animations for skills */
+.skill-legend-item {
+    opacity: 0;
+    animation: skillFadeIn 0.6s ease forwards;
+}
+
+.skill-legend-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-legend-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-legend-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-legend-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-legend-item:nth-child(5) { animation-delay: 0.5s; }
+.skill-legend-item:nth-child(6) { animation-delay: 0.6s; }
+.skill-legend-item:nth-child(7) { animation-delay: 0.7s; }
+.skill-legend-item:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes skillFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive enhancements for mobile devices */
+@media (max-width: 768px) {
+    .skill-legend-item:hover {
+        transform: none; /* Simplify hover effects on touch devices */
+    }
+}
+
+/* Category badge effects */
+.skill-category h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.skill-category:hover h3::before {
+    opacity: 1;
+} 

@@ -1,0 +1,102 @@
+# English translations for AI & Cybersecurity Portfolio
+# Copyright (C) 2024 Adrian Infantes
+# This file is distributed under the same license as the Portfolio package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Portfolio 1.0\n"
+"Report-Msgid-Bugs-To: infantesromeroadrian@gmail.com\n"
+"POT-Creation-Date: 2024-12-01 12:00+0000\n"
+"PO-Revision-Date: 2024-12-01 12:00+0000\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Welcome section
+msgid "Bienvenido al perfil de"
+msgstr "Welcome to the profile of"
+
+msgid "Ingeniero de IA y Especialista en Ciberseguridad"
+msgstr "AI Engineer & Cybersecurity Specialist"
+
+msgid "Explorar Portfolio"
+msgstr "Explore Portfolio"
+
+msgid "Click para continuar"
+msgstr "Click to continue"
+
+# Language switcher
+msgid "Cambiar a inglés"
+msgstr "Switch to English"
+
+msgid "Cambiar a español"
+msgstr "Switch to Spanish"
+
+# Main sections
+msgid "Proyectos Destacados"
+msgstr "Featured Projects"
+
+msgid "Contáctame"
+msgstr "Get In Touch"
+
+msgid "Experiencia Profesional"
+msgstr "Professional Experience"
+
+msgid "Formación Académica"
+msgstr "Academic Background"
+
+msgid "Certificaciones Profesionales"
+msgstr "Professional Certifications"
+
+# Navigation
+msgid "Inicio"
+msgstr "Home"
+
+msgid "Acerca de"
+msgstr "About"
+
+msgid "Cronología"
+msgstr "Timeline"
+
+msgid "Estudios"
+msgstr "Studies"
+
+msgid "Certificaciones"
+msgstr "Certifications"
+
+msgid "Proyectos"
+msgstr "Projects"
+
+msgid "Experiencia"
+msgstr "Experience"
+
+msgid "Habilidades"
+msgstr "Skills"
+
+msgid "Contacto"
+msgstr "Contact"
+
+# Banner section
+msgid "Certificado Empresarial"
+msgstr "Enterprise Certified"
+
+msgid "Arquitectura de Soluciones Cloud Inteligentes"
+msgstr "Architecting Intelligent Cloud Solutions"
+
+msgid "Certificaciones Cloud"
+msgstr "Cloud Certifications"
+
+msgid "Proyectos Empresariales"
+msgstr "Enterprise Projects"
+
+msgid "Tiempo de Actividad"
+msgstr "Solution Uptime"
+
+# Buttons
+msgid "Código"
+msgstr "Code"
+
+msgid "Demo"
+msgstr "Demo" 

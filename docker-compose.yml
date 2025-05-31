@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  # AI & Cybersecurity Portfolio - Django Application
+  portfolio:
+    build: .
+    container_name: portfolio-django-app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=django-dev-secret-key-change-in-production
+      - DJANGO_SETTINGS_MODULE=src.portfolio.settings
+      - ALLOWED_HOST=localhost
+      - PORT=8000
+      # Django i18n configuration
+      - LANG=es_ES.UTF-8
+      - LANGUAGE=es_ES.UTF-8
+      - LC_ALL=es_ES.UTF-8
+      # OpenAI API Configuration for Chatbot (read from .env file)
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      # Mount source code for development
+      - .:/app
+      # Persist static files
+      - static_volume:/app/staticfiles
+      # Persist logs
+      - ./logs:/app/logs
+      # Mount locale files for i18n
+      - ./locale:/app/locale
+    command: >
+      sh -c "python manage.py compilemessages &&
+             python manage.py collectstatic --noinput &&
+             gunicorn --bind 0.0.0.0:8000 --workers 3 --timeout 120 src.portfolio.wsgi:application"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health/', timeout=10)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - portfolio-network
+
+  # Development Database (Optional - Django uses SQLite by default)
+  # Uncomment if you want to use PostgreSQL
+  # db:
+  #   image: postgres:15-alpine
+  #   container_name: portfolio-db
+  #   environment:
+  #     POSTGRES_DB: portfolio
+  #     POSTGRES_USER: portfolio_user
+  #     POSTGRES_PASSWORD: portfolio_pass
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - portfolio-network
+
+  # Redis for caching (Optional)
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: portfolio-redis
+  #   command: redis-server --appendonly yes
+  #   volumes:
+  #     - redis_data:/data
+  #   networks:
+  #     - portfolio-network
+
+volumes:
+  static_volume:
+  # postgres_data:
+  # redis_data:
+
+networks:
+  portfolio-network:
+    driver: bridge 

@@ -1,0 +1,102 @@
+# Spanish translations for AI & Cybersecurity Portfolio
+# Copyright (C) 2024 Adrian Infantes
+# This file is distributed under the same license as the Portfolio package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Portfolio 1.0\n"
+"Report-Msgid-Bugs-To: infantesromeroadrian@gmail.com\n"
+"POT-Creation-Date: 2024-12-01 12:00+0000\n"
+"PO-Revision-Date: 2024-12-01 12:00+0000\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Welcome section
+msgid "Bienvenido al perfil de"
+msgstr "Bienvenido al perfil de"
+
+msgid "Ingeniero de IA y Especialista en Ciberseguridad"
+msgstr "Ingeniero de IA y Especialista en Ciberseguridad"
+
+msgid "Explorar Portfolio"
+msgstr "Explorar Portfolio"
+
+msgid "Click para continuar"
+msgstr "Click para continuar"
+
+# Language switcher
+msgid "Cambiar a inglés"
+msgstr "Cambiar a inglés"
+
+msgid "Cambiar a español"
+msgstr "Cambiar a español"
+
+# Main sections
+msgid "Proyectos Destacados"
+msgstr "Proyectos Destacados"
+
+msgid "Contáctame"
+msgstr "Contáctame"
+
+msgid "Experiencia Profesional"
+msgstr "Experiencia Profesional"
+
+msgid "Formación Académica"
+msgstr "Formación Académica"
+
+msgid "Certificaciones Profesionales"
+msgstr "Certificaciones Profesionales"
+
+# Navigation
+msgid "Inicio"
+msgstr "Inicio"
+
+msgid "Acerca de"
+msgstr "Acerca de"
+
+msgid "Cronología"
+msgstr "Cronología"
+
+msgid "Estudios"
+msgstr "Estudios"
+
+msgid "Certificaciones"
+msgstr "Certificaciones"
+
+msgid "Proyectos"
+msgstr "Proyectos"
+
+msgid "Experiencia"
+msgstr "Experiencia"
+
+msgid "Habilidades"
+msgstr "Habilidades"
+
+msgid "Contacto"
+msgstr "Contacto"
+
+# Banner section
+msgid "Certificado Empresarial"
+msgstr "Certificado Empresarial"
+
+msgid "Arquitectura de Soluciones Cloud Inteligentes"
+msgstr "Arquitectura de Soluciones Cloud Inteligentes"
+
+msgid "Certificaciones Cloud"
+msgstr "Certificaciones Cloud"
+
+msgid "Proyectos Empresariales"
+msgstr "Proyectos Empresariales"
+
+msgid "Tiempo de Actividad"
+msgstr "Tiempo de Actividad"
+
+# Buttons
+msgid "Código"
+msgstr "Código"
+
+msgid "Demo"
+msgstr "Demo" 

@@ -1,0 +1,386 @@
+/*
+Glassmorphism Effects for AI & Cybersecurity Portfolio
+Professional glass effects with tech-focused design - Minimalist Version
+*/
+
+/* Header Glassmorphism */
+header {
+    background: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+    color: white;
+    padding: 0.8rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header:hover {
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom-color: rgba(0, 212, 170, 0.2);
+}
+
+/* Navigation Glassmorphism - Modern Tab Style */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 3px solid transparent;
+    margin: 0 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover, nav a.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 0 20px rgba(255, 255, 255, 0.05);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section Glassmorphism */
+.hero {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 170, 0.1);
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 2rem;
+    box-shadow: 
+        0 15px 25px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(0, 212, 170, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(0, 212, 170, 0.05) 0%, 
+        transparent 50%, 
+        rgba(75, 172, 254, 0.03) 100%);
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #fff, #00d4aa, #4facfe, #fff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 3s ease-in-out infinite;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero .btn {
+    background: rgba(0, 212, 170, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 170, 0.2);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 212, 170, 0.3);
+    background: rgba(75, 172, 254, 0.25);
+    border-color: rgba(75, 172, 254, 0.4);
+}
+
+/* Section Glassmorphism */
+.section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 170, 0.1);
+    border-radius: 18px;
+    box-shadow: 
+        0 15px 25px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(0, 212, 170, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 170, 0.05), transparent);
+    transition: left 2s ease;
+    pointer-events: none;
+}
+
+.section:hover::before {
+    left: 100%;
+}
+
+.section:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 20px 35px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(0, 212, 170, 0.2);
+    border-color: rgba(0, 212, 170, 0.2);
+}
+
+.section h2 {
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 212, 170, 0.3);
+    padding-bottom: 0.3rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Skills Glassmorphism */
+.skill-category {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 170, 0.08);
+    border-radius: 15px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 212, 170, 0.15);
+}
+
+.skill-category h3 {
+    color: rgba(0, 212, 170, 0.95);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.skill-bar {
+    width: 120px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 212, 170, 0.1);
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color), rgba(75, 172, 254, 0.8));
+    border-radius: 8px;
+    transition: all 0.8s ease;
+    box-shadow: 0 0 10px rgba(0, 212, 170, 0.4);
+}
+
+/* Project Cards Glassmorphism */
+.project-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 170, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(0, 212, 170, 0.05) 0%, 
+        transparent 50%, 
+        rgba(75, 172, 254, 0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.12),
+        0 0 25px rgba(0, 212, 170, 0.2);
+    border-color: rgba(0, 212, 170, 0.2);
+}
+
+.tech-tag {
+    background: rgba(0, 212, 170, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 212, 170, 0.25);
+    color: rgba(255, 255, 255, 0.95);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: rgba(75, 172, 254, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(75, 172, 254, 0.2);
+    border-color: rgba(75, 172, 254, 0.4);
+}
+
+/* Footer Glassmorphism */
+footer {
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(0, 212, 170, 0.15);
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.social-links a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 212, 170, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    background: rgba(0, 212, 170, 0.15);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 212, 170, 0.25);
+    border-color: rgba(0, 212, 170, 0.3);
+}
+
+/* Responsive Glassmorphism */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 2px;
+        padding: 3px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav a {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+        margin: 1px;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        gap: 1px;
+        padding: 2px;
+    }
+    
+    nav a {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,3086 @@
+/*
+Theme Switcher for AI Engineer vs Cybersecurity Modes
+Professional dual-theme system with smooth transitions
+*/
+
+/* Theme Switcher - Clean and Functional */
+.theme-switcher {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.theme-switcher:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.theme-switcher-content {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.theme-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.7rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.theme-label.active {
+    color: white;
+    text-shadow: 0 0 10px currentColor;
+}
+
+/* Toggle Switch - Fixed and Clean */
+.theme-toggle {
+    position: relative;
+    width: 40px !important;
+    height: 20px !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2px !important;
+    box-sizing: border-box !important;
+}
+
+.toggle-slider {
+    position: absolute !important;
+    top: 2px !important;
+    left: 2px !important;
+    width: 16px !important;
+    height: 16px !important;
+    background: linear-gradient(135deg, #0040ff, #0080ff) !important;
+    border-radius: 50% !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 2px 8px rgba(0, 64, 255, 0.6) !important;
+}
+
+.theme-toggle.cybersecurity .toggle-slider {
+    transform: translateX(18px) !important;
+    background: linear-gradient(135deg, #330606, #4d0909) !important;
+    box-shadow: 0 2px 8px rgba(51, 6, 6, 0.6) !important;
+}
+
+/* Theme Indicator for Cybersecurity Mode */
+body.cybersecurity-theme .theme-toggle {
+    background: rgba(255, 0, 0, 0.1) !important;
+    border-color: rgba(255, 0, 0, 0.3) !important;
+}
+
+body.cybersecurity-theme .theme-switcher {
+    background: rgba(20, 0, 0, 0.9);
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+/* AI Engineer Theme (Default) - Dark Electric Colors */
+:root {
+    /* AI Engineer Color Palette - Dark Electric Blues */
+    --primary-color: #0040ff;
+    --secondary-color: #0080ff;
+    --accent-color: #0066ff;
+    --highlight-color: #1a75ff;
+    --glow-color: rgba(0, 64, 255, 0.8);
+    
+    /* Tech AI Colors - Dark & Electric */
+    --neural-blue: #001a66;
+    --deep-learning: #003399;
+    --algorithm-cyan: #0080ff;
+    
+    /* Enhanced Dark Electric Gradients */
+    --bg-gradient: linear-gradient(135deg, 
+        #000011 0%,     /* Almost black navy */
+        #001133 25%,    /* Dark electric navy */
+        #002266 50%,    /* Deep electric blue */
+        #0040ff 75%,    /* Electric blue */
+        #0080ff 100%    /* Bright electric blue */
+    );
+    
+    --theme-name: "AI Engineer";
+}
+
+/* Cybersecurity Theme - Rojo Hacking */
+body.cybersecurity-theme {
+    --primary-color: #1a0303;      /* Rojo muy oscuro */
+    --secondary-color: #330606;    /* Rojo oscuro */
+    --accent-color: #4d0909;       /* Rojo más intenso */
+    --highlight-color: #cc1414;    /* Rojo brillante */
+    --glow-color: rgba(255, 0, 0, 0.8); /* Glow rojo */
+    
+    /* Cybersecurity Colors - Ultra Dark Reds */
+    --neural-blue: #0a0202;        /* Casi negro con tinte rojo */
+    --deep-learning: #1a0505;      /* Rojo ultra oscuro */
+    --algorithm-cyan: #2a0808;     /* Rojo muy oscuro */
+    
+    /* Ultra Dark Red Gradients */
+    --bg-gradient: linear-gradient(135deg, 
+        #000000 0%,     /* Negro puro */
+        #0a0202 15%,    /* Casi negro con tinte rojo */
+        #1a0505 35%,    /* Rojo ultra oscuro */
+        #330606 55%,    /* Rojo oscuro */
+        #4d0909 75%,    /* Rojo intenso */
+        #660c0c 100%    /* Rojo más visible */
+    );
+    
+    --theme-name: "Cybersecurity";
+}
+
+/* Dynamic Background Animation */
+body {
+    background: var(--bg-gradient);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced AI Engineer Theme Glassmorphism */
+.section,
+.hero,
+.project-card,
+.skill-category,
+.experience-card {
+    border-color: rgba(0, 64, 255, 0.4);
+    box-shadow: 
+        0 25px 45px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(0, 128, 255, 0.3);
+}
+
+.section:hover,
+.hero:hover,
+.project-card:hover {
+    border-color: rgba(0, 64, 255, 0.6);
+    box-shadow: 
+        0 35px 65px rgba(0, 0, 0, 0.2),
+        0 0 50px rgba(0, 64, 255, 0.4);
+}
+
+/* Enhanced AI Engineer Header */
+header {
+    border-bottom-color: rgba(0, 64, 255, 0.4);
+}
+
+header:hover {
+    border-bottom-color: rgba(0, 128, 255, 0.6);
+}
+
+/* Enhanced AI Engineer Navigation */
+nav ul {
+    background: rgba(0, 64, 255, 0.05);
+    border: 1px solid rgba(0, 64, 255, 0.1);
+}
+
+nav a {
+    border-bottom-color: transparent;
+    background: rgba(0, 64, 255, 0.08);
+}
+
+nav a:hover, nav a.active {
+    background: rgba(0, 128, 255, 0.12);
+    border-bottom-color: var(--secondary-color);
+    box-shadow: 
+        0 8px 25px rgba(0, 64, 255, 0.2),
+        0 0 20px rgba(0, 128, 255, 0.25);
+    text-shadow: 0 0 10px rgba(0, 128, 255, 0.3);
+}
+
+/* Enhanced AI Engineer Section Headers */
+.section h2 {
+    border-bottom-color: rgba(0, 128, 255, 0.8);
+}
+
+/* Enhanced AI Engineer Skill Categories */
+.skill-category h3 {
+    color: rgba(0, 128, 255, 0.95);
+}
+
+.skill-bar {
+    border-color: rgba(0, 64, 255, 0.4);
+}
+
+.skill-progress {
+    background: linear-gradient(90deg, #0040ff, #0080ff);
+    box-shadow: 0 0 20px rgba(0, 64, 255, 0.8);
+}
+
+/* Enhanced AI Engineer Tech Tags */
+.tech-tag {
+    background: rgba(0, 64, 255, 0.4);
+    border-color: rgba(0, 64, 255, 0.6);
+}
+
+.tech-tag:hover {
+    background: rgba(0, 128, 255, 0.6);
+    border-color: rgba(0, 128, 255, 0.8);
+    box-shadow: 0 5px 15px rgba(0, 128, 255, 0.5);
+}
+
+/* Enhanced AI Engineer Buttons */
+.btn {
+    background: rgba(0, 64, 255, 0.4);
+    border-color: rgba(0, 64, 255, 0.5);
+}
+
+.btn:hover {
+    background: rgba(0, 128, 255, 0.5);
+    border-color: rgba(0, 128, 255, 0.7);
+    box-shadow: 0 10px 25px rgba(0, 128, 255, 0.5);
+}
+
+/* Enhanced AI Engineer Particles */
+.particle {
+    background: rgba(0, 64, 255, 0.7);
+    box-shadow: 0 0 20px rgba(0, 128, 255, 0.8);
+}
+
+/* Enhanced AI Engineer Social Links */
+.social-links a {
+    border-color: rgba(0, 64, 255, 0.3);
+}
+
+.social-links a:hover {
+    background: rgba(0, 64, 255, 0.4);
+    border-color: rgba(0, 128, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 64, 255, 0.5);
+    color: #0080ff;
+}
+
+/* Enhanced AI Engineer Highlights */
+.text-highlight {
+    color: var(--secondary-color);
+}
+
+.icon {
+    color: var(--secondary-color);
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+}
+
+/* Enhanced AI Engineer Hero Text */
+.hero h1 {
+    background: linear-gradient(45deg, #fff, #0040ff, #0080ff, #fff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 3s ease-in-out infinite;
+}
+
+/* Enhanced AI Engineer Scrollbar */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 64, 255, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 128, 255, 0.9);
+}
+
+/* Theme-specific Cybersecurity Overrides - Rojo Hacking */
+body.cybersecurity-theme .section,
+body.cybersecurity-theme .hero,
+body.cybersecurity-theme .project-card,
+body.cybersecurity-theme .skill-category,
+body.cybersecurity-theme .experience-card {
+    border-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 
+        0 25px 45px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 0, 0, 0.3);
+}
+
+body.cybersecurity-theme .section:hover,
+body.cybersecurity-theme .hero:hover,
+body.cybersecurity-theme .project-card:hover {
+    border-color: rgba(255, 0, 0, 0.6);
+    box-shadow: 
+        0 35px 65px rgba(0, 0, 0, 0.15),
+        0 0 40px rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme header {
+    border-bottom-color: rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme header:hover {
+    border-bottom-color: rgba(255, 0, 0, 0.6);
+}
+
+body.cybersecurity-theme nav ul {
+    background: rgba(255, 0, 0, 0.05);
+    border: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+body.cybersecurity-theme nav a {
+    border-bottom-color: transparent;
+    background: rgba(255, 0, 0, 0.08);
+}
+
+body.cybersecurity-theme nav a:hover, body.cybersecurity-theme nav a.active {
+    background: rgba(255, 0, 0, 0.12);
+    border-bottom-color: var(--secondary-color);
+    box-shadow: 
+        0 8px 25px rgba(255, 0, 0, 0.2),
+        0 0 20px rgba(255, 0, 0, 0.25);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+body.cybersecurity-theme .section h2 {
+    border-bottom-color: rgba(255, 0, 0, 0.7);
+}
+
+body.cybersecurity-theme .skill-category h3 {
+    color: rgba(255, 51, 51, 0.95);
+}
+
+body.cybersecurity-theme .skill-bar {
+    border-color: rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme .skill-progress {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+body.cybersecurity-theme .tech-tag {
+    background: rgba(255, 0, 0, 0.4);
+    border-color: rgba(255, 0, 0, 0.5);
+}
+
+body.cybersecurity-theme .tech-tag:hover {
+    background: rgba(255, 0, 0, 0.6);
+    border-color: rgba(255, 51, 51, 0.7);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme .btn {
+    background: rgba(255, 0, 0, 0.4);
+    border-color: rgba(255, 0, 0, 0.5);
+}
+
+body.cybersecurity-theme .btn:hover {
+    background: rgba(255, 0, 0, 0.6);
+    border-color: rgba(255, 51, 51, 0.7);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme .particle {
+    background: rgba(255, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+body.cybersecurity-theme .social-links a {
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+body.cybersecurity-theme .social-links a:hover {
+    background: rgba(255, 0, 0, 0.4);
+    border-color: rgba(255, 51, 51, 0.6);
+    box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4);
+    color: var(--secondary-color);
+}
+
+body.cybersecurity-theme .text-highlight {
+    color: var(--highlight-color);
+}
+
+body.cybersecurity-theme .icon {
+    color: var(--highlight-color);
+}
+
+body.cybersecurity-theme .contact-info i {
+    color: var(--highlight-color);
+}
+
+body.cybersecurity-theme .hero h1 {
+    background: linear-gradient(45deg, #fff, var(--primary-color), var(--secondary-color), #fff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 3s ease-in-out infinite;
+}
+
+body.cybersecurity-theme ::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0.6);
+}
+
+body.cybersecurity-theme ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 51, 51, 0.8);
+}
+
+/* Responsive Theme Switcher - Fixed Positioning */
+@media (max-width: 768px) {
+    .theme-switcher {
+        top: 15px;
+        right: 15px;
+        padding: 0.4rem 0.6rem;
+        gap: 0.5rem;
+        z-index: 1001; /* Above mobile menu */
+    }
+    
+    .theme-label {
+        font-size: 0.6rem;
+    }
+    
+    .theme-toggle {
+        width: 35px !important;
+        height: 18px !important;
+    }
+    
+    .toggle-slider {
+        width: 14px !important;
+        height: 14px !important;
+        top: 2px !important;
+        left: 2px !important;
+    }
+    
+    .theme-toggle.cybersecurity .toggle-slider {
+        transform: translateX(17px) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-switcher {
+        top: 15px;
+        right: 10px;
+        padding: 0.3rem 0.5rem;
+        gap: 0.4rem;
+        z-index: 1001; /* Above mobile menu */
+    }
+    
+    .theme-label {
+        font-size: 0.55rem;
+    }
+    
+    .theme-toggle {
+        width: 30px !important;
+        height: 16px !important;
+    }
+    
+    .toggle-slider {
+        width: 12px !important;
+        height: 12px !important;
+        top: 2px !important;
+        left: 2px !important;
+    }
+    
+    .theme-toggle.cybersecurity .toggle-slider {
+        transform: translateX(16px) !important;
+    }
+}
+
+/* Theme Transition Effects */
+* {
+    transition: 
+        background-color 0.8s ease,
+        border-color 0.8s ease,
+        box-shadow 0.8s ease,
+        color 0.8s ease;
+}
+
+/* Matrix Rain Effect for Cybersecurity Theme - Enhanced Density */
+body.cybersecurity-theme::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        /* Primary matrix rain layer - Much darker */
+        radial-gradient(1px 1px at 15px 25px, rgba(13, 31, 15, 0.08), transparent),
+        radial-gradient(1px 1px at 35px 15px, rgba(26, 58, 29, 0.06), transparent),
+        radial-gradient(1px 1px at 55px 35px, rgba(30, 71, 33, 0.04), transparent),
+        radial-gradient(1px 1px at 75px 20px, rgba(13, 31, 15, 0.07), transparent),
+        radial-gradient(1px 1px at 25px 45px, rgba(26, 58, 29, 0.05), transparent),
+        
+        /* Secondary dense layer - Much darker */
+        radial-gradient(1px 1px at 45px 10px, rgba(13, 31, 15, 0.06), transparent),
+        radial-gradient(1px 1px at 65px 40px, rgba(30, 71, 33, 0.05), transparent),
+        radial-gradient(1px 1px at 85px 25px, rgba(26, 58, 29, 0.06), transparent),
+        radial-gradient(1px 1px at 5px 35px, rgba(13, 31, 15, 0.05), transparent),
+        radial-gradient(1px 1px at 95px 15px, rgba(30, 71, 33, 0.04), transparent),
+        
+        /* Micro particles layer - Barely visible */
+        radial-gradient(0.5px 0.5px at 20px 40px, rgba(13, 31, 15, 0.1), transparent),
+        radial-gradient(0.5px 0.5px at 40px 20px, rgba(26, 58, 29, 0.08), transparent),
+        radial-gradient(0.5px 0.5px at 60px 30px, rgba(30, 71, 33, 0.06), transparent),
+        radial-gradient(0.5px 0.5px at 80px 10px, rgba(13, 31, 15, 0.08), transparent),
+        radial-gradient(0.5px 0.5px at 10px 50px, rgba(26, 58, 29, 0.07), transparent);
+    background-repeat: repeat;
+    background-size: 60px 60px; /* Smaller pattern for higher density */
+    animation: matrix-rain 8s linear infinite; /* Much faster animation */
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Secondary Matrix Rain Layer - Different Speed */
+body.cybersecurity-theme::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        /* Fast moving layer with different positions - Much darker */
+        radial-gradient(1px 1px at 30px 10px, rgba(13, 31, 15, 0.04), transparent),
+        radial-gradient(1px 1px at 50px 25px, rgba(26, 58, 29, 0.03), transparent),
+        radial-gradient(1px 1px at 70px 45px, rgba(30, 71, 33, 0.05), transparent),
+        radial-gradient(1px 1px at 90px 30px, rgba(13, 31, 15, 0.04), transparent),
+        radial-gradient(0.5px 0.5px at 10px 20px, rgba(26, 58, 29, 0.06), transparent),
+        radial-gradient(0.5px 0.5px at 80px 5px, rgba(30, 71, 33, 0.04), transparent);
+    background-repeat: repeat;
+    background-size: 80px 80px; /* Different size for variation */
+    animation: matrix-rain-fast 5s linear infinite; /* Even faster layer */
+    pointer-events: none;
+    z-index: -2;
+}
+
+@keyframes matrix-rain {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 60px; } /* Match the background-size */
+}
+
+@keyframes matrix-rain-fast {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 80px; } /* Match the secondary layer size */
+}
+
+/* Enhanced Dark Electric Circuit Board Effect for AI Engineer Theme */
+body:not(.cybersecurity-theme)::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 25px 25px, rgba(0, 64, 255, 0.3), transparent),
+        radial-gradient(1px 1px at 50px 50px, rgba(0, 128, 255, 0.2), transparent),
+        radial-gradient(1px 1px at 75px 75px, rgba(0, 64, 255, 0.15), transparent),
+        linear-gradient(0deg, transparent 24%, rgba(0, 64, 255, 0.08) 25%, rgba(0, 64, 255, 0.08) 26%, transparent 27%, transparent 74%, rgba(0, 64, 255, 0.08) 75%, rgba(0, 64, 255, 0.08) 76%, transparent 77%, transparent),
+        linear-gradient(90deg, transparent 24%, rgba(0, 128, 255, 0.06) 25%, rgba(0, 128, 255, 0.06) 26%, transparent 27%, transparent 74%, rgba(0, 128, 255, 0.06) 75%, rgba(0, 128, 255, 0.06) 76%, transparent 77%, transparent);
+    background-repeat: repeat;
+    background-size: 100px 100px, 150px 150px, 200px 200px, 100px 100px, 100px 100px;
+    animation: circuit-pulse 25s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes circuit-pulse {
+    0%, 100% { 
+        opacity: 0.4;
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    50% { 
+        opacity: 0.8;
+        background-position: 50px 50px, 75px 75px, 100px 100px, 50px 50px, 50px 50px;
+    }
+}
+
+/* Enhanced Dynamic Chatbot Floating Bubble */
+.chatbot-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    background: rgba(0, 64, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(0, 128, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 15px 35px rgba(0, 64, 255, 0.3),
+        inset 0 2px 0 rgba(0, 128, 255, 0.2);
+    animation: 
+        chatbot-orbital 12s ease-in-out infinite,
+        chatbot-breathing 4s ease-in-out infinite,
+        chatbot-glow-pulse 6s ease-in-out infinite;
+    overflow: hidden;
+    transform-origin: center;
+}
+
+.chatbot-bubble::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(0, 64, 255, 0.1) 0%, 
+        transparent 50%, 
+        rgba(0, 128, 255, 0.05) 100%);
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+}
+
+.chatbot-bubble:hover {
+    animation-play-state: paused;
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: 
+        0 30px 60px rgba(0, 64, 255, 0.6),
+        inset 0 2px 0 rgba(0, 128, 255, 0.5),
+        0 0 50px rgba(0, 128, 255, 1);
+    border-color: rgba(0, 128, 255, 0.8);
+}
+
+/* Dynamic Particle Emanations */
+.chatbot-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    background: 
+        radial-gradient(2px 2px at 20px 30px, rgba(0, 128, 255, 0.8), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(0, 64, 255, 0.6), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(0, 128, 255, 0.7), transparent),
+        radial-gradient(1px 1px at 50px 60px, rgba(0, 64, 255, 0.5), transparent),
+        radial-gradient(2px 2px at 80px 10px, rgba(0, 128, 255, 0.6), transparent),
+        radial-gradient(1px 1px at 10px 80px, rgba(0, 64, 255, 0.4), transparent);
+    background-size: 120px 120px;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: particle-rotation 8s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+@keyframes particle-rotation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        opacity: 0.7;
+    }
+}
+
+.chatbot-bubble:hover::before {
+    opacity: 1;
+}
+
+.chatbot-icon {
+    position: relative;
+    z-index: 2;
+}
+
+.chatbot-icon i {
+    font-size: 28px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 0 20px rgba(0, 128, 255, 0.8);
+    animation: chatbot-glow 2s ease-in-out infinite alternate;
+}
+
+.chatbot-pulse {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid rgba(0, 128, 255, 0.6);
+    border-radius: 50%;
+    animation: chatbot-pulse 2s ease-out infinite;
+}
+
+.chatbot-tooltip {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    border: 1px solid rgba(0, 128, 255, 0.3);
+}
+
+.chatbot-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 15px;
+    border: 5px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+.chatbot-bubble:hover .chatbot-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* AI Engineer Theme - Show AI text, hide Cyber text */
+.chatbot-tooltip .cyber-text {
+    display: none;
+}
+
+.chatbot-tooltip .ai-text {
+    display: inline;
+    color: rgba(0, 128, 255, 0.95);
+}
+
+/* Enhanced Cybersecurity Theme Chatbot */
+body.cybersecurity-theme .chatbot-bubble {
+    background: rgba(51, 6, 6, 0.2);
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 
+        0 15px 35px rgba(51, 6, 6, 0.4),
+        inset 0 2px 0 rgba(255, 0, 0, 0.3);
+    animation: 
+        chatbot-orbital-cyber 15s ease-in-out infinite,
+        chatbot-glitch 8s ease-in-out infinite,
+        chatbot-cyber-pulse 5s ease-in-out infinite;
+}
+
+body.cybersecurity-theme .chatbot-bubble::before {
+    background: linear-gradient(135deg, 
+        rgba(51, 6, 6, 0.15) 0%, 
+        transparent 50%, 
+        rgba(255, 0, 0, 0.08) 100%);
+}
+
+/* Cybersecurity Particle Emanations */
+body.cybersecurity-theme .chatbot-bubble::after {
+    background: 
+        radial-gradient(2px 2px at 20px 30px, rgba(255, 0, 0, 0.6), transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(51, 6, 6, 0.4), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(204, 20, 20, 0.5), transparent),
+        radial-gradient(2px 2px at 50px 60px, rgba(255, 0, 0, 0.3), transparent),
+        radial-gradient(1px 1px at 80px 10px, rgba(51, 6, 6, 0.4), transparent),
+        radial-gradient(1px 1px at 10px 80px, rgba(204, 20, 20, 0.3), transparent),
+        /* Matrix-style dots rojos */
+        radial-gradient(1px 1px at 30px 20px, rgba(255, 0, 0, 0.7), transparent),
+        radial-gradient(1px 1px at 70px 80px, rgba(51, 6, 6, 0.5), transparent);
+    animation: particle-rotation-cyber 6s linear infinite;
+}
+
+@keyframes particle-rotation-cyber {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        opacity: 0.5;
+        filter: brightness(1);
+    }
+    25% {
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.1);
+        opacity: 0.7;
+        filter: brightness(1.2);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(0.9);
+        opacity: 0.6;
+        filter: brightness(0.8);
+    }
+    75% {
+        transform: translate(-50%, -50%) rotate(270deg) scale(1.05);
+        opacity: 0.8;
+        filter: brightness(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        opacity: 0.5;
+        filter: brightness(1);
+    }
+}
+
+body.cybersecurity-theme .chatbot-bubble:hover {
+    animation-play-state: paused;
+    transform: translateY(-8px) scale(1.2);
+    box-shadow: 
+        0 35px 70px rgba(51, 6, 6, 0.7),
+        inset 0 3px 0 rgba(255, 0, 0, 0.6),
+        0 0 50px rgba(255, 0, 0, 0.8);
+    border-color: rgba(204, 20, 20, 0.9);
+    filter: brightness(1.3) contrast(1.2);
+}
+
+body.cybersecurity-theme .chatbot-icon i {
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+body.cybersecurity-theme .chatbot-pulse {
+    border-color: rgba(255, 0, 0, 0.6);
+}
+
+body.cybersecurity-theme .chatbot-tooltip {
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Cybersecurity Theme - Show Cyber text, hide AI text */
+body.cybersecurity-theme .chatbot-tooltip .ai-text {
+    display: none;
+}
+
+body.cybersecurity-theme .chatbot-tooltip .cyber-text {
+    display: inline;
+    color: rgba(255, 51, 51, 0.95);
+}
+
+/* Enhanced Dynamic Chatbot Animations */
+@keyframes chatbot-orbital {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(15px, -10px) rotate(90deg);
+    }
+    50% {
+        transform: translate(0, -20px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-15px, -10px) rotate(270deg);
+    }
+}
+
+@keyframes chatbot-breathing {
+    0%, 100% {
+        transform: scale(1);
+        border-width: 2px;
+    }
+    50% {
+        transform: scale(1.05);
+        border-width: 3px;
+    }
+}
+
+@keyframes chatbot-glow-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 15px 35px rgba(0, 64, 255, 0.3),
+            inset 0 2px 0 rgba(0, 128, 255, 0.2),
+            0 0 20px rgba(0, 128, 255, 0.4);
+    }
+    50% {
+        box-shadow: 
+            0 25px 50px rgba(0, 64, 255, 0.5),
+            inset 0 2px 0 rgba(0, 128, 255, 0.4),
+            0 0 40px rgba(0, 128, 255, 0.8);
+    }
+}
+
+@keyframes chatbot-glow {
+    0% {
+        text-shadow: 0 0 15px rgba(0, 128, 255, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 25px rgba(0, 128, 255, 1);
+    }
+}
+
+body.cybersecurity-theme .chatbot-icon i {
+    animation: chatbot-glow-cyber 2s ease-in-out infinite alternate;
+}
+
+/* Cybersecurity Specific Animations */
+@keyframes chatbot-orbital-cyber {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    20% {
+        transform: translate(25px, -5px) rotate(72deg);
+    }
+    40% {
+        transform: translate(15px, -25px) rotate(144deg);
+    }
+    60% {
+        transform: translate(-15px, -25px) rotate(216deg);
+    }
+    80% {
+        transform: translate(-25px, -5px) rotate(288deg);
+    }
+}
+
+@keyframes chatbot-glitch {
+    0%, 90%, 100% {
+        transform: translate(0, 0);
+        filter: hue-rotate(0deg);
+    }
+    5% {
+        transform: translate(2px, -1px);
+        filter: hue-rotate(90deg);
+    }
+    10% {
+        transform: translate(-1px, 2px);
+        filter: hue-rotate(180deg);
+    }
+    15% {
+        transform: translate(1px, 1px);
+        filter: hue-rotate(270deg);
+    }
+    20% {
+        transform: translate(-2px, -1px);
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes chatbot-cyber-pulse {
+    0%, 100% {
+        box-shadow: 
+            0 15px 35px rgba(51, 6, 6, 0.4),
+            inset 0 2px 0 rgba(255, 0, 0, 0.3),
+            0 0 15px rgba(255, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 
+            0 25px 50px rgba(51, 6, 6, 0.6),
+            inset 0 2px 0 rgba(255, 0, 0, 0.5),
+            0 0 30px rgba(255, 0, 0, 0.6);
+    }
+}
+
+@keyframes chatbot-glow-cyber {
+    0% {
+        text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 25px rgba(255, 0, 0, 1);
+    }
+}
+
+@keyframes chatbot-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Responsive Chatbot */
+@media (max-width: 768px) {
+    .chatbot-bubble {
+        width: 55px;
+        height: 55px;
+        bottom: 25px;
+        right: 25px;
+    }
+    
+    .chatbot-icon i {
+        font-size: 24px;
+    }
+    
+    .chatbot-tooltip {
+        bottom: 70px;
+        right: 0;
+        font-size: 0.7rem;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot-bubble {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .chatbot-icon i {
+        font-size: 20px;
+    }
+    
+    .chatbot-tooltip {
+        bottom: 65px;
+        right: 0;
+    }
+}
+
+/* Chatbot Window - Enhanced Glassmorphism */
+.chatbot-window {
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    width: 350px;
+    height: 500px;
+    background: rgba(15, 15, 25, 0.15);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Glass effect borders */
+    position: fixed;
+}
+
+.chatbot-window.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+/* Chatbot Header - Glass Effect */
+.chatbot-header {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.chatbot-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0.02) 100%);
+    border-radius: 25px 25px 0 0;
+    pointer-events: none;
+}
+
+.chatbot-header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chatbot-avatar {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 128, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 128, 255, 0.4);
+}
+
+.chatbot-avatar i {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 0 10px rgba(0, 128, 255, 0.6);
+}
+
+.chatbot-title h4 {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+}
+
+.chatbot-status {
+    font-size: 11px;
+    color: rgba(0, 255, 127, 0.8);
+    font-weight: 500;
+}
+
+.chatbot-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatbot-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.95);
+    transform: scale(1.1);
+}
+
+/* Messages Area - Translucent Glass */
+.chatbot-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    position: relative;
+}
+
+.chatbot-messages::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.03) 0%,
+        rgba(255, 255, 255, 0.01) 50%,
+        rgba(255, 255, 255, 0.03) 100%);
+    pointer-events: none;
+}
+
+.chatbot-message {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.message-avatar {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.message-avatar i {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.message-content {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 15px;
+    border-radius: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 13px;
+    line-height: 1.4;
+    max-width: 250px;
+    position: relative;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.message-content::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 12px;
+    border: 6px solid transparent;
+    border-right-color: rgba(0, 128, 255, 0.1);
+}
+
+/* Input Area - Glass Effect */
+.chatbot-input-area {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+}
+
+.chatbot-input-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(255, 255, 255, 0.08) 100%);
+    border-radius: 0 0 25px 25px;
+    pointer-events: none;
+}
+
+.chatbot-input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chatbot-input-wrapper input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    padding: 10px 15px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.chatbot-input-wrapper input:focus {
+    border-color: rgba(0, 128, 255, 0.6);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.chatbot-input-wrapper input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chatbot-send {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.9);
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.chatbot-send:hover:not(:disabled) {
+    background: rgba(0, 128, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.chatbot-send:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chatbot-coming-soon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-style: italic;
+}
+
+.chatbot-coming-soon i {
+    color: rgba(255, 193, 7, 0.8);
+}
+
+/* Theme Text Visibility - AI Engineer (Default) */
+.cyber-title,
+.cyber-greeting {
+    display: none;
+}
+
+.ai-title,
+.ai-greeting {
+    display: block;
+}
+
+/* Cybersecurity Theme Overrides */
+body.cybersecurity-theme .chatbot-window {
+    border-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 0, 0, 0.2);
+}
+
+body.cybersecurity-theme .chatbot-header {
+    background: rgba(51, 6, 6, 0.15);
+    border-bottom-color: rgba(255, 0, 0, 0.3);
+}
+
+body.cybersecurity-theme .chatbot-avatar {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme .chatbot-avatar i {
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+body.cybersecurity-theme .message-avatar {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+body.cybersecurity-theme .message-content {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.2);
+}
+
+body.cybersecurity-theme .message-content::before {
+    border-right-color: rgba(255, 0, 0, 0.1);
+}
+
+body.cybersecurity-theme .chatbot-input-wrapper input {
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+body.cybersecurity-theme .chatbot-input-wrapper input:focus {
+    border-color: rgba(255, 0, 0, 0.6);
+}
+
+body.cybersecurity-theme .chatbot-send {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme .chatbot-send:hover:not(:disabled) {
+    background: rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme .chatbot-input-area {
+    border-top-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Cybersecurity Theme Text Visibility */
+body.cybersecurity-theme .ai-title,
+body.cybersecurity-theme .ai-greeting {
+    display: none;
+}
+
+body.cybersecurity-theme .cyber-title,
+body.cybersecurity-theme .cyber-greeting {
+    display: block;
+}
+
+/* Responsive Chatbot Window */
+@media (max-width: 768px) {
+    .chatbot-window {
+        width: 320px;
+        height: 450px;
+        bottom: 100px;
+        right: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot-window {
+        width: 280px;
+        height: 400px;
+        bottom: 90px;
+        right: 20px;
+        left: 20px;
+        width: calc(100% - 40px);
+    }
+    
+    .chatbot-header {
+        padding: 12px 15px;
+    }
+    
+    .chatbot-messages {
+        padding: 15px;
+    }
+    
+    .chatbot-input-area {
+        padding: 12px 15px;
+    }
+}
+
+/* Welcome Screen / Antesala */
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.welcome-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Dual Background with Diagonal Split */
+.welcome-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* AI Side (Left) - Clean Blue Background */
+.welcome-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        #000011 0%,     /* Almost black navy */
+        #001133 25%,    /* Dark electric navy */
+        #002266 50%,    /* Deep electric blue */
+        #0040ff 75%,    /* Electric blue */
+        #0080ff 100%    /* Bright electric blue */
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    clip-path: polygon(0 0, 65% 0, 35% 100%, 0 100%);
+    transition: clip-path 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cybersecurity Side (Right) - Clean Red Background */
+.welcome-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        #000000 0%,     /* Pure black */
+        #0a0202 15%,    /* Almost black with hint of red */
+        #0a0505 35%,    /* Very dark red-black */
+        #1a0c0c 55%,    /* Dark red */
+        #1f0f0f 75%,    /* Darker red */
+        #3a1d1d 100%    /* Dark professional red */
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite reverse;
+    clip-path: polygon(65% 0, 100% 0, 100% 100%, 35% 100%);
+    transition: clip-path 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Diagonal divider removed for clean design */
+
+/* Dual Content Container */
+.welcome-content {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    max-width: 700px;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: welcome-float 6s ease-in-out infinite;
+}
+
+/* Dual Avatar Container */
+.welcome-avatar {
+    position: relative;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.avatar-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(0, 128, 255, 0.3),
+        0 0 40px rgba(255, 0, 0, 0.3);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: avatar-pulse-dual 4s ease-in-out infinite;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect - Image Change */
+.welcome-avatar {
+    position: relative;
+}
+
+.welcome-avatar::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url('/static/images/13ad9e79-4e4c-4b7d-a4a3-ef4d8afca3b2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.welcome-avatar:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.welcome-avatar:hover .avatar-image {
+    transform: scale(1.05);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(0, 128, 255, 0.6),
+        0 0 80px rgba(255, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.6);
+    animation-play-state: paused;
+}
+
+.avatar-glow {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        rgba(0, 128, 255, 0.4) 0deg,
+        rgba(255, 255, 255, 0.6) 90deg,
+        rgba(255, 0, 0, 0.4) 180deg,
+        rgba(255, 255, 255, 0.6) 270deg,
+        rgba(0, 128, 255, 0.4) 360deg
+    );
+    animation: glow-rotate-dual 6s linear infinite;
+    z-index: -1;
+}
+
+/* Dual Text Styling */
+.welcome-text {
+    margin-bottom: 2.5rem;
+}
+
+.welcome-title {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 128, 255, 0.3),
+        0 0 30px rgba(255, 0, 0, 0.3);
+    animation: text-fade-in 2s ease-out 0.5s both;
+}
+
+.welcome-name {
+    font-size: 3rem;
+    background: linear-gradient(135deg, 
+        #0080ff 0%,
+        #ffffff 25%,
+        #0040ff 45%,
+        #ffffff 55%,
+        #ff0000 75%,
+        #ffffff 100%
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: dual-text-shimmer 4s ease-in-out infinite, text-fade-in 2s ease-out 1s both;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-subtitle {
+    font-size: 1.3rem;
+    background: linear-gradient(90deg, 
+        rgba(0, 128, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0.95) 50%,
+        rgba(255, 0, 0, 0.9) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    animation: text-fade-in 2s ease-out 1.5s both;
+}
+
+/* Dual Theme Indicator */
+.theme-indicators {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.theme-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.8;
+    animation: indicator-float 3s ease-in-out infinite;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 10px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-indicator:hover {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.2);
+    animation-play-state: paused;
+}
+
+.theme-indicator.ai {
+    animation-delay: 0s;
+}
+
+.theme-indicator.cyber {
+    animation-delay: 1.5s;
+}
+
+.theme-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.theme-indicator.ai .theme-icon {
+    background: rgba(0, 128, 255, 0.2);
+    color: #0080ff;
+    box-shadow: 0 0 30px rgba(0, 128, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.theme-indicator.cyber .theme-icon {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff3333;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Enhanced hover effects for each theme */
+.theme-indicator.ai:hover {
+    background: rgba(0, 128, 255, 0.1);
+    border-color: rgba(0, 128, 255, 0.4);
+    box-shadow: 
+        0 20px 40px rgba(0, 128, 255, 0.3),
+        0 0 50px rgba(0, 128, 255, 0.5);
+}
+
+.theme-indicator.ai:hover .theme-icon {
+    background: rgba(0, 128, 255, 0.4);
+    color: #ffffff;
+    box-shadow: 0 0 40px rgba(0, 128, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.theme-indicator.ai:hover .theme-label-dual {
+    color: rgba(0, 128, 255, 1);
+    text-shadow: 0 0 10px rgba(0, 128, 255, 0.6);
+}
+
+.theme-indicator.cyber:hover {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 
+        0 20px 40px rgba(255, 0, 0, 0.3),
+        0 0 50px rgba(255, 0, 0, 0.5);
+}
+
+.theme-indicator.cyber:hover .theme-icon {
+    background: rgba(255, 0, 0, 0.4);
+    color: #ffffff;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.theme-indicator.cyber:hover .theme-label-dual {
+    color: rgba(255, 51, 51, 1);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.theme-label-dual {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.theme-indicator.ai .theme-label-dual {
+    color: rgba(0, 128, 255, 0.9);
+}
+
+.theme-indicator.cyber .theme-label-dual {
+    color: rgba(255, 51, 51, 0.9);
+}
+
+/* Enhanced Button with Dual Theme */
+.welcome-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.enter-button {
+    background: linear-gradient(135deg, 
+        rgba(0, 128, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 0, 0, 0.2) 100%
+    );
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    color: rgba(255, 255, 255, 0.95);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    animation: button-fade-in 2s ease-out 2s both;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.enter-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 128, 255, 0.3), 
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 0, 0, 0.3),
+        transparent
+    );
+    transition: left 1s ease;
+}
+
+.enter-button:hover::before {
+    left: 100%;
+}
+
+.enter-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(0, 128, 255, 0.4),
+        0 0 40px rgba(255, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, 
+        rgba(0, 128, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 0, 0, 0.3) 100%
+    );
+}
+
+.enter-button:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.click-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    animation: hint-blink 2s ease-in-out infinite, text-fade-in 2s ease-out 2.5s both;
+}
+
+/* Matrix Rain Effect - Real Matrix Characters */
+.welcome-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+/* Multiple Matrix Layers for High Density */
+.matrix-layer-1,
+.matrix-layer-2,
+.matrix-layer-3,
+.matrix-layer-4,
+.matrix-layer-5,
+.matrix-layer-6 {
+    position: absolute;
+    top: -50%;
+    width: 8%;
+    height: 200%;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    white-space: pre-wrap;
+    word-break: break-all;
+    pointer-events: none;
+}
+
+/* Blue Matrix Streams - More Density */
+.matrix-layer-1 {
+    left: 0%;
+    color: rgba(0, 128, 255, 0.9);
+    font-size: 14px;
+    line-height: 16px;
+    animation: matrixFallBlue 4s linear infinite;
+    text-shadow: 0 0 8px rgba(0, 128, 255, 0.9);
+    animation-delay: 0s;
+}
+
+.matrix-layer-2 {
+    left: 8%;
+    color: rgba(0, 168, 255, 0.8);
+    font-size: 12px;
+    line-height: 14px;
+    animation: matrixFallBlue 4.5s linear infinite;
+    text-shadow: 0 0 6px rgba(0, 168, 255, 0.8);
+    animation-delay: -0.8s;
+}
+
+.matrix-layer-3 {
+    left: 16%;
+    color: rgba(64, 192, 255, 0.7);
+    font-size: 10px;
+    line-height: 12px;
+    animation: matrixFallBlue 5s linear infinite;
+    text-shadow: 0 0 4px rgba(64, 192, 255, 0.7);
+    animation-delay: -1.6s;
+}
+
+.matrix-layer-4 {
+    left: 24%;
+    color: rgba(0, 200, 255, 0.8);
+    font-size: 11px;
+    line-height: 13px;
+    animation: matrixFallBlue 3.8s linear infinite;
+    text-shadow: 0 0 5px rgba(0, 200, 255, 0.8);
+    animation-delay: -2.4s;
+}
+
+.matrix-layer-5 {
+    left: 32%;
+    color: rgba(100, 220, 255, 0.6);
+    font-size: 9px;
+    line-height: 11px;
+    animation: matrixFallBlue 5.5s linear infinite;
+    text-shadow: 0 0 3px rgba(100, 220, 255, 0.6);
+    animation-delay: -3.2s;
+}
+
+.matrix-layer-6 {
+    left: 40%;
+    color: rgba(0, 150, 255, 0.7);
+    font-size: 13px;
+    line-height: 15px;
+    animation: matrixFallBlue 4.2s linear infinite;
+    text-shadow: 0 0 7px rgba(0, 150, 255, 0.7);
+    animation-delay: -4s;
+}
+
+/* Red Matrix Streams - High Density */
+.matrix-layer-red-1,
+.matrix-layer-red-2,
+.matrix-layer-red-3,
+.matrix-layer-red-4,
+.matrix-layer-red-5,
+.matrix-layer-red-6 {
+    position: absolute;
+    top: -50%;
+    width: 8%;
+    height: 200%;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    white-space: pre-wrap;
+    word-break: break-word;
+    pointer-events: none;
+}
+
+.matrix-layer-red-1 {
+    right: 0%;
+    color: rgba(255, 0, 0, 0.9);
+    font-size: 13px;
+    line-height: 15px;
+    animation: matrixFallRed 3.8s linear infinite;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.9);
+    animation-delay: 0s;
+}
+
+.matrix-layer-red-2 {
+    right: 8%;
+    color: rgba(255, 51, 51, 0.8);
+    font-size: 11px;
+    line-height: 13px;
+    animation: matrixFallRed 4.2s linear infinite;
+    text-shadow: 0 0 6px rgba(255, 51, 51, 0.8);
+    animation-delay: -0.9s;
+}
+
+.matrix-layer-red-3 {
+    right: 16%;
+    color: rgba(204, 0, 0, 0.7);
+    font-size: 9px;
+    line-height: 11px;
+    animation: matrixFallRed 4.8s linear infinite;
+    text-shadow: 0 0 4px rgba(204, 0, 0, 0.7);
+    animation-delay: -1.8s;
+}
+
+.matrix-layer-red-4 {
+    right: 24%;
+    color: rgba(255, 20, 20, 0.8);
+    font-size: 10px;
+    line-height: 12px;
+    animation: matrixFallRed 3.5s linear infinite;
+    text-shadow: 0 0 5px rgba(255, 20, 20, 0.8);
+    animation-delay: -2.7s;
+}
+
+.matrix-layer-red-5 {
+    right: 32%;
+    color: rgba(180, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 14px;
+    animation: matrixFallRed 5.2s linear infinite;
+    text-shadow: 0 0 3px rgba(180, 0, 0, 0.6);
+    animation-delay: -3.6s;
+}
+
+.matrix-layer-red-6 {
+    right: 40%;
+    color: rgba(255, 80, 80, 0.7);
+    font-size: 8px;
+    line-height: 10px;
+    animation: matrixFallRed 4.5s linear infinite;
+    text-shadow: 0 0 7px rgba(255, 80, 80, 0.7);
+    animation-delay: -4.5s;
+}
+
+/* Matrix Stream 1 - Blue */
+.welcome-particles::before {
+    content: "01010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011";
+    position: absolute;
+    top: -50%;
+    left: 5%;
+    width: 8%;
+    height: 200%;
+    color: rgba(0, 128, 255, 0.9);
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    animation: matrixFallBlue 6s linear infinite;
+    text-shadow: 0 0 8px rgba(0, 128, 255, 0.9);
+    animation-delay: 0s;
+}
+
+/* Matrix Stream 2 - Blue */
+.welcome-particles::after {
+    content: "AI ML DL CNN RNN LSTM GAN VAE NLP GPT BERT T5 XLNet RoBERTa DistilBERT ALBERT BigBird Electra DeBERTa AdaBoost XGBoost LightGBM CatBoost RandomForest SVM KNN DecisionTree NaiveBayes LogisticRegression LinearRegression RidgeRegression LassoRegression ElasticNet PCA SVD ICA t-SNE UMAP K-Means DBSCAN HierarchicalClustering GaussianMixture";
+    position: absolute;
+    top: -50%;
+    left: 15%;
+    width: 8%;
+    height: 200%;
+    color: rgba(0, 168, 255, 0.8);
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    animation: matrixFallBlue 7s linear infinite;
+    text-shadow: 0 0 6px rgba(0, 168, 255, 0.8);
+    animation-delay: -1.2s;
+}
+
+/* Particles removed - Clean backgrounds only */
+
+/* Individual particles removed - Using clean background effects instead */
+
+/* New Dual Animations */
+@keyframes dual-text-shimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes glow-rotate-dual {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0.8;
+    }
+    33% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes avatar-pulse-dual {
+    0%, 100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    33% {
+        transform: scale(1.03);
+        filter: brightness(1.1) hue-rotate(10deg);
+    }
+    66% {
+        transform: scale(1.05);
+        filter: brightness(1.05) hue-rotate(-10deg);
+    }
+}
+
+/* Divider pulse animation removed */
+
+@keyframes indicator-float {
+    0%, 100% {
+        transform: translateY(0px);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+}
+
+/* Additional Animations for Dual Theme */
+@keyframes welcome-float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes text-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes button-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes hint-blink {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Particle float animation removed - replaced with background effects */
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Matrix Text Falling Animation - Blue (AI) */
+@keyframes matrixFallBlue {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Matrix Text Falling Animation - Red (Cybersecurity) */
+@keyframes matrixFallRed {
+    0% {
+        transform: translateY(-120%);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Portfolio Content - Hidden initially */
+.portfolio-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
+}
+
+.portfolio-content.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive Adjustments for Dual Theme */
+@media (max-width: 768px) {
+    .welcome-content {
+        padding: 1.5rem;
+        margin: 1rem;
+        max-width: 90%;
+    }
+    
+    .avatar-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .welcome-title {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-name {
+        font-size: 2.2rem;
+    }
+    
+    .welcome-subtitle {
+        font-size: 1rem;
+    }
+    
+    .enter-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+    
+    .theme-indicators {
+        padding: 0 5%;
+    }
+    
+    .theme-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    
+    .theme-label-dual {
+        font-size: 0.7rem;
+    }
+    
+    .welcome-background::before {
+        clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+    }
+    
+    .welcome-background::after {
+        clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-content {
+        padding: 1rem;
+    }
+    
+    .avatar-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .welcome-title {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-name {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .enter-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .theme-indicators {
+        display: none; /* Hide indicators on very small screens */
+    }
+    
+    .welcome-background::before {
+        clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
+    }
+    
+    .welcome-background::after {
+        clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
+    }
+}
+
+/* Pulse Wave Effects for Data Transmission Simulation */
+.chatbot-bubble .pulse-wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 65px;
+    height: 65px;
+    border: 2px solid rgba(0, 128, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-wave 3s ease-out infinite;
+    pointer-events: none;
+}
+
+.chatbot-bubble .pulse-wave:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.chatbot-bubble .pulse-wave:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes pulse-wave {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Cybersecurity Pulse Waves */
+body.cybersecurity-theme .chatbot-bubble .pulse-wave {
+    border-color: rgba(255, 0, 0, 0.4);
+    animation: pulse-wave-cyber 4s ease-out infinite;
+}
+
+@keyframes pulse-wave-cyber {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+        border-color: rgba(255, 0, 0, 0.4);
+    }
+    50% {
+        border-color: rgba(204, 20, 20, 0.6);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+        border-color: rgba(51, 6, 6, 0.2);
+    }
+}
+
+/* Hero Banner Image Transitions */
+.hero-banner-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    min-height: 300px; /* Altura mínima para acomodar imágenes verticales */
+}
+
+.hero-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 15px;
+}
+
+/* AI Engineer Theme Image Effects - Mantener cover para imagen horizontal */
+.hero-banner-image img {
+    filter: none;
+    transform: scale(1);
+    object-fit: cover;
+}
+
+/* Cybersecurity Theme Image Effects - Ajustes para imagen vertical sin filtros */
+body.cybersecurity-theme .hero-banner-image {
+    min-height: 350px; /* Más altura para la imagen vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.cybersecurity-theme .hero-banner-image img {
+    filter: none !important; /* Sin filtros - mostrar imagen original */
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    box-shadow: 
+        0 0 20px rgba(255, 0, 0, 0.3),
+        inset 0 0 20px rgba(255, 0, 0, 0.1);
+    object-fit: contain; /* Mostrar imagen completa sin cortar */
+    object-position: center;
+    max-height: 100%;
+    width: auto; /* Permitir que el ancho se ajuste automáticamente */
+    height: auto;
+}
+
+body.cybersecurity-theme .hero-banner-image:hover img {
+    filter: none !important; /* Sin filtros en hover - mantener imagen original */
+    box-shadow: 
+        0 0 30px rgba(255, 0, 0, 0.5),
+        inset 0 0 30px rgba(255, 0, 0, 0.2);
+    transform: scale(1.03); /* Menos zoom para imagen vertical */
+}
+
+/* Image Loading State */
+.hero-banner-image.loading img {
+    opacity: 0.5;
+    transform: scale(1.02);
+    filter: blur(2px);
+}
+
+/* Hover Effects for Hero Banner */
+.hero-banner-image:hover img {
+    transform: scale(1.05);
+}
+
+body.cybersecurity-theme .hero-banner-image:hover img {
+    filter: hue-rotate(120deg) saturate(1.4) brightness(0.9) contrast(1.2);
+    box-shadow: 
+        0 0 30px rgba(0, 255, 0, 0.5),
+        inset 0 0 30px rgba(0, 255, 0, 0.2);
+    transform: scale(1.03); /* Menos zoom para imagen vertical */
+}
+
+/* Banner Content Updates */
+.banner-title {
+    transition: all 0.5s ease;
+}
+
+.banner-subtitle {
+    transition: all 0.5s ease;
+}
+
+/* Cybersecurity Banner Styling */
+body.cybersecurity-theme .banner-title {
+    color: rgba(255, 51, 51, 0.9);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+body.cybersecurity-theme .banner-subtitle {
+    color: rgba(255, 102, 102, 0.8);
+}
+
+/* AI Engineer Banner Styling */
+.banner-title {
+    color: rgba(0, 128, 255, 0.9);
+    text-shadow: 0 0 10px rgba(0, 128, 255, 0.6);
+}
+
+.banner-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hero Banner Image Configuration - Default AI Engineer */
+.hero-banner-image {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-banner-image img {
+    object-fit: contain;
+    object-position: center;
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    filter: none;
+}
+
+/* Responsive adjustments for vertical image */
+@media (max-width: 768px) {
+    body.cybersecurity-theme .hero-banner-image {
+        min-height: 280px;
+    }
+}
+
+/* Advanced Chatbot Styles - Enhanced UX */
+
+/* Quick Actions */
+.chatbot-quick-actions {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chat-quick-action {
+    background: rgba(0, 128, 255, 0.1);
+    border: 1px solid rgba(0, 128, 255, 0.3);
+    border-radius: 20px;
+    padding: 8px 12px;
+    color: rgba(0, 128, 255, 0.9);
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.chat-quick-action:hover {
+    background: rgba(0, 128, 255, 0.2);
+    border-color: rgba(0, 128, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 128, 255, 0.2);
+}
+
+.chat-quick-action i {
+    font-size: 10px;
+}
+
+/* Enhanced Input Wrapper */
+.chatbot-input-wrapper textarea {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 128, 255, 0.3);
+    border-radius: 15px;
+    padding: 12px 15px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+    resize: none;
+    min-height: 20px;
+    max-height: 120px;
+    line-height: 1.4;
+}
+
+.chatbot-input-wrapper textarea:focus {
+    border-color: rgba(0, 128, 255, 0.6);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 2px rgba(0, 128, 255, 0.1);
+}
+
+.chatbot-input-wrapper textarea:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chatbot-input-wrapper textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* Enhanced Message Styling */
+.chatbot-message {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    animation: message-slide-in 0.3s ease-out;
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.user-message .message-content {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 18px 18px 4px 18px;
+    max-width: 280px;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.assistant-message .message-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px 18px 18px 4px;
+    max-width: 280px;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.message-content {
+    padding: 12px 16px;
+    position: relative;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.message-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.message-text strong {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 600;
+}
+
+.message-text em {
+    color: rgba(0, 128, 255, 0.9);
+    font-style: normal;
+}
+
+.message-time {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: right;
+}
+
+.user-message .message-time {
+    text-align: left;
+}
+
+/* Enhanced Avatar Styling */
+.user-avatar {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.assistant-avatar {
+    background: rgba(0, 128, 255, 0.2);
+    border: 1px solid rgba(0, 128, 255, 0.4);
+}
+
+.assistant-avatar i {
+    color: rgba(0, 128, 255, 0.9);
+}
+
+.user-avatar i {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    opacity: 0.8;
+}
+
+.typing-animation {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.typing-animation span {
+    width: 6px;
+    height: 6px;
+    background: rgba(0, 128, 255, 0.7);
+    border-radius: 50%;
+    animation: typing-bounce 1.4s infinite;
+}
+
+.typing-animation span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-animation span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Error Message Styling */
+.error-message .message-content {
+    background: rgba(255, 59, 48, 0.1);
+    border-color: rgba(255, 59, 48, 0.3);
+}
+
+.error-message .message-text {
+    color: rgba(255, 149, 0, 0.9);
+}
+
+/* Cybersecurity Theme Overrides for New Styles */
+body.cybersecurity-theme .chat-quick-action {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.3);
+    color: rgba(255, 51, 51, 0.9);
+}
+
+body.cybersecurity-theme .chat-quick-action:hover {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
+}
+
+body.cybersecurity-theme .chatbot-input-wrapper textarea {
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+body.cybersecurity-theme .chatbot-input-wrapper textarea:focus {
+    border-color: rgba(255, 0, 0, 0.6);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.1);
+}
+
+body.cybersecurity-theme .assistant-message .message-content {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.2);
+}
+
+body.cybersecurity-theme .assistant-avatar {
+    background: rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme .assistant-avatar i {
+    color: rgba(255, 51, 51, 0.9);
+}
+
+body.cybersecurity-theme .typing-animation span {
+    background: rgba(255, 51, 51, 0.7);
+}
+
+body.cybersecurity-theme .message-text em {
+    color: rgba(255, 51, 51, 0.9);
+}
+
+/* Animations */
+@keyframes message-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typing-bounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Adjustments for Enhanced Chatbot */
+@media (max-width: 768px) {
+    .chatbot-quick-actions {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+    
+    .chat-quick-action {
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+    
+    .chatbot-message {
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+    
+    .message-content {
+        max-width: 220px;
+        padding: 10px 14px;
+    }
+    
+    .message-text {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot-quick-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .chat-quick-action {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+    
+    .message-content {
+        max-width: 180px;
+        padding: 8px 12px;
+    }
+    
+    .chatbot-input-wrapper textarea {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.cybersecurity-theme .hero-banner-image {
+        min-height: 250px;
+    }
+}
+
+/* Enhanced Chatbot Controls */
+.chatbot-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.chatbot-maximize {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.chatbot-maximize:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.95);
+    transform: scale(1.1);
+}
+
+/* Maximized Chatbot State */
+.chatbot-window.maximized {
+    position: fixed !important;
+    top: 20px !important;
+    left: 20px !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    width: calc(100vw - 40px) !important;
+    height: calc(100vh - 40px) !important;
+    max-width: none !important;
+    max-height: none !important;
+    z-index: 1001 !important;
+    border-radius: 20px;
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(0, 128, 255, 0.3);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+}
+
+/* Maximized Header Adjustments */
+.chatbot-window.maximized .chatbot-header {
+    padding: 20px 25px;
+    border-bottom: 2px solid rgba(0, 128, 255, 0.4);
+}
+
+.chatbot-window.maximized .chatbot-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.chatbot-window.maximized .chatbot-title h4 {
+    font-size: 18px;
+}
+
+.chatbot-window.maximized .chatbot-status {
+    font-size: 13px;
+}
+
+/* Maximized Messages Area */
+.chatbot-window.maximized .chatbot-messages {
+    padding: 25px;
+    gap: 20px;
+}
+
+.chatbot-window.maximized .chatbot-message {
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.chatbot-window.maximized .message-content {
+    max-width: 60%;
+    padding: 15px 18px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.chatbot-window.maximized .message-avatar {
+    width: 35px;
+    height: 35px;
+}
+
+.chatbot-window.maximized .message-avatar i {
+    font-size: 16px;
+}
+
+/* Maximized Input Area */
+.chatbot-window.maximized .chatbot-input-area {
+    padding: 20px 25px;
+    border-top: 2px solid rgba(0, 128, 255, 0.4);
+}
+
+.chatbot-window.maximized .chatbot-quick-actions {
+    margin-bottom: 18px;
+    gap: 12px;
+}
+
+.chatbot-window.maximized .chat-quick-action {
+    padding: 12px 16px;
+    font-size: 13px;
+}
+
+.chatbot-window.maximized .chatbot-input-wrapper textarea {
+    padding: 15px 18px;
+    font-size: 14px;
+    max-height: 150px;
+}
+
+.chatbot-window.maximized .chatbot-send {
+    width: 45px;
+    height: 45px;
+}
+
+/* Maximize Icon Changes */
+.chatbot-window.maximized .chatbot-maximize i {
+    transform: rotate(45deg);
+}
+
+.chatbot-window.maximized .chatbot-maximize i::before {
+    content: '\f78c'; /* fas fa-compress-alt */
+}
+
+/* Cybersecurity Theme Overrides for Maximized State */
+body.cybersecurity-theme .chatbot-window.maximized {
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 0, 0, 0.3);
+}
+
+body.cybersecurity-theme .chatbot-window.maximized .chatbot-header {
+    border-bottom-color: rgba(255, 0, 0, 0.4);
+}
+
+body.cybersecurity-theme .chatbot-window.maximized .chatbot-input-area {
+    border-top-color: rgba(255, 0, 0, 0.4);
+}
+
+/* Smooth Transitions for Maximize/Minimize */
+.chatbot-window {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.chatbot-window.transitioning {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Enhanced Responsive for Maximized State */
+@media (max-width: 768px) {
+    .chatbot-window.maximized {
+        top: 10px !important;
+        left: 10px !important;
+        right: 10px !important;
+        bottom: 10px !important;
+        width: calc(100vw - 20px) !important;
+        height: calc(100vh - 20px) !important;
+        border-radius: 15px;
+    }
+    
+    .chatbot-window.maximized .chatbot-header {
+        padding: 15px 18px;
+    }
+    
+    .chatbot-window.maximized .chatbot-messages {
+        padding: 18px;
+    }
+    
+    .chatbot-window.maximized .chatbot-input-area {
+        padding: 15px 18px;
+    }
+    
+    .chatbot-window.maximized .message-content {
+        max-width: 75%;
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chatbot-window.maximized {
+        top: 5px !important;
+        left: 5px !important;
+        right: 5px !important;
+        bottom: 5px !important;
+        width: calc(100vw - 10px) !important;
+        height: calc(100vh - 10px) !important;
+        border-radius: 12px;
+    }
+    
+    .chatbot-window.maximized .chatbot-header {
+        padding: 12px 15px;
+    }
+    
+    .chatbot-window.maximized .chatbot-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .chatbot-window.maximized .chatbot-title h4 {
+        font-size: 16px;
+    }
+    
+    .chatbot-window.maximized .message-content {
+        max-width: 85%;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+    
+    .chatbot-window.maximized .chatbot-quick-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .chatbot-window.maximized .chat-quick-action {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+
+ 

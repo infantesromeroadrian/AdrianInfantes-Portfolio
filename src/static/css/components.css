@@ -1,0 +1,3060 @@
+/*
+Component-specific styles for AI & Cybersecurity Portfolio
+Grid layouts, skills, projects, and specialized components - Minimalist Version
+*/
+
+/* Layout Components */
+.main-content {
+    margin-top: 80px;
+    padding: 1.5rem 0;
+}
+
+/* Enhanced Grid Systems - Optimized for Radar Charts */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* Responsive optimization for radar chart structure */
+@media (min-width: 1400px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1399px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 999px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 500px;
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Enhanced Skills Components - Aesthetic Category Styling */
+.skill-category {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 170, 0.1);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: translateY(0);
+    height: fit-content;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced gradient backgrounds for specific AI/ML categories */
+.skill-category[data-category*="Programming Foundation"] {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.05));
+    border-color: rgba(52, 152, 219, 0.3);
+}
+
+.skill-category[data-category*="ML & Deep Learning"] {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.05));
+    border-color: rgba(155, 89, 182, 0.3);
+}
+
+.skill-category[data-category*="Generative AI & LLMs"] {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.05));
+    border-color: rgba(231, 76, 60, 0.3);
+    position: relative;
+}
+
+.skill-category[data-category*="Generative AI & LLMs"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(231, 76, 60, 0.05) 50%, transparent 70%);
+    animation: shimmerEffect 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.skill-category[data-category*="AI Infrastructure & RAG"] {
+    background: linear-gradient(135deg, rgba(26, 188, 156, 0.1), rgba(22, 160, 133, 0.05));
+    border-color: rgba(26, 188, 156, 0.3);
+}
+
+.skill-category[data-category*="Cloud & MLOps"] {
+    background: linear-gradient(135deg, rgba(52, 73, 94, 0.1), rgba(44, 62, 80, 0.05));
+    border-color: rgba(52, 73, 94, 0.3);
+}
+
+.skill-category[data-category*="Data Visualization"] {
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.1), rgba(243, 156, 18, 0.05));
+    border-color: rgba(241, 196, 15, 0.3);
+}
+
+.skill-category[data-category*="Cybersecurity"] {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(51, 6, 6, 0.05));
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+.skill-category[data-category*="Backend & APIs"] {
+    background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(81, 45, 168, 0.05));
+    border-color: rgba(103, 58, 183, 0.3);
+}
+
+/* Enhanced hover effects with category-specific colors */
+.skill-category[data-category*="Programming Foundation"]:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(52, 152, 219, 0.5);
+    box-shadow: 0 20px 40px rgba(52, 152, 219, 0.2);
+}
+
+.skill-category[data-category*="ML & Deep Learning"]:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(155, 89, 182, 0.5);
+    box-shadow: 0 20px 40px rgba(155, 89, 182, 0.2);
+}
+
+.skill-category[data-category*="Generative AI & LLMs"]:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(231, 76, 60, 0.5);
+    box-shadow: 0 20px 40px rgba(231, 76, 60, 0.3);
+}
+
+.skill-category[data-category*="AI Infrastructure & RAG"]:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(26, 188, 156, 0.5);
+    box-shadow: 0 20px 40px rgba(26, 188, 156, 0.2);
+}
+
+.skill-category[data-category*="Cloud & MLOps"]:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(52, 73, 94, 0.5);
+    box-shadow: 0 20px 40px rgba(52, 73, 94, 0.2);
+}
+
+.skill-category[data-category*="Data Visualization"]:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(241, 196, 15, 0.5);
+    box-shadow: 0 20px 40px rgba(241, 196, 15, 0.2);
+}
+
+.skill-category[data-category*="Cybersecurity"]:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 20px 40px rgba(255, 0, 0, 0.2);
+}
+
+.skill-category[data-category*="Backend & APIs"]:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(103, 58, 183, 0.5);
+    box-shadow: 0 20px 40px rgba(103, 58, 183, 0.2);
+}
+
+/* Enhanced category titles with better typography */
+.skill-category h3 {
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.skill-category h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    opacity: 0.6;
+}
+
+/* Enhanced legend styling with category colors */
+.skill-category[data-category*="Programming Foundation"] .skill-legend-value {
+    color: rgba(52, 152, 219, 0.9);
+}
+
+.skill-category[data-category*="ML & Deep Learning"] .skill-legend-value {
+    color: rgba(155, 89, 182, 0.9);
+}
+
+.skill-category[data-category*="Generative AI & LLMs"] .skill-legend-value {
+    color: rgba(231, 76, 60, 0.9);
+}
+
+.skill-category[data-category*="AI Infrastructure & RAG"] .skill-legend-value {
+    color: rgba(26, 188, 156, 0.9);
+}
+
+.skill-category[data-category*="Cloud & MLOps"] .skill-legend-value {
+    color: rgba(52, 73, 94, 0.9);
+}
+
+.skill-category[data-category*="Data Visualization"] .skill-legend-value {
+    color: rgba(241, 196, 15, 0.9);
+}
+
+.skill-category[data-category*="Cybersecurity"] .skill-legend-value {
+    color: rgba(255, 51, 51, 0.9);
+}
+
+.skill-category[data-category*="Backend & APIs"] .skill-legend-value {
+    color: rgba(103, 58, 183, 0.9);
+}
+
+/* Enhanced stat values with category colors */
+.skill-category[data-category*="Programming Foundation"] .skill-stat-value {
+    color: rgba(52, 152, 219, 0.9);
+}
+
+.skill-category[data-category*="ML & Deep Learning"] .skill-stat-value {
+    color: rgba(155, 89, 182, 0.9);
+}
+
+.skill-category[data-category*="Generative AI & LLMs"] .skill-stat-value {
+    color: rgba(231, 76, 60, 0.9);
+}
+
+.skill-category[data-category*="AI Infrastructure & RAG"] .skill-stat-value {
+    color: rgba(26, 188, 156, 0.9);
+}
+
+.skill-category[data-category*="Cloud & MLOps"] .skill-stat-value {
+    color: rgba(52, 73, 94, 0.9);
+}
+
+.skill-category[data-category*="Data Visualization"] .skill-stat-value {
+    color: rgba(241, 196, 15, 0.9);
+}
+
+.skill-category[data-category*="Cybersecurity"] .skill-stat-value {
+    color: rgba(255, 51, 51, 0.9);
+}
+
+.skill-category[data-category*="Backend & APIs"] .skill-stat-value {
+    color: rgba(103, 58, 183, 0.9);
+}
+
+/* Enhanced shimmer animation for the Generative AI category */
+@keyframes shimmerEffect {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* Shimmer active state for dynamic JavaScript control */
+.skill-category.shimmer-active::before {
+    animation: shimmerEffect 2s ease-in-out infinite;
+}
+
+/* Enhanced glow effect for Generative AI category */
+.skill-category[data-category*="Generative AI & LLMs"].shimmer-active {
+    box-shadow: 
+        0 20px 40px rgba(231, 76, 60, 0.4),
+        0 0 30px rgba(231, 76, 60, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Pulsing border effect for active categories */
+@keyframes borderPulse {
+    0%, 100% {
+        border-color: rgba(231, 76, 60, 0.3);
+    }
+    50% {
+        border-color: rgba(231, 76, 60, 0.6);
+    }
+}
+
+.skill-category[data-category*="Generative AI & LLMs"]:hover {
+    animation: borderPulse 2s ease-in-out infinite;
+}
+
+/* Enhanced legend color dots with category-specific colors */
+.skill-category[data-category*="Programming Foundation"] .skill-legend-color {
+    border-color: rgba(52, 152, 219, 0.8);
+    background: rgba(52, 152, 219, 0.2);
+}
+
+.skill-category[data-category*="ML & Deep Learning"] .skill-legend-color {
+    border-color: rgba(155, 89, 182, 0.8);
+    background: rgba(155, 89, 182, 0.2);
+}
+
+.skill-category[data-category*="Generative AI & LLMs"] .skill-legend-color {
+    border-color: rgba(231, 76, 60, 0.8);
+    background: rgba(231, 76, 60, 0.2);
+}
+
+.skill-category[data-category*="AI Infrastructure & RAG"] .skill-legend-color {
+    border-color: rgba(26, 188, 156, 0.8);
+    background: rgba(26, 188, 156, 0.2);
+}
+
+.skill-category[data-category*="Cloud & MLOps"] .skill-legend-color {
+    border-color: rgba(52, 73, 94, 0.8);
+    background: rgba(52, 73, 94, 0.2);
+}
+
+.skill-category[data-category*="Data Visualization"] .skill-legend-color {
+    border-color: rgba(241, 196, 15, 0.8);
+    background: rgba(241, 196, 15, 0.2);
+}
+
+.skill-category[data-category*="Cybersecurity"] .skill-legend-color {
+    border-color: rgba(255, 0, 0, 0.8);
+    background: rgba(255, 0, 0, 0.2);
+}
+
+.skill-category[data-category*="Backend & APIs"] .skill-legend-color {
+    border-color: rgba(103, 58, 183, 0.8);
+    background: rgba(103, 58, 183, 0.2);
+}
+
+/* Theme filtering animation support */
+.skill-category.theme-filtering {
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+}
+
+.skill-category[data-theme="ai"] {
+    border-color: rgba(0, 128, 255, 0.2);
+    background: linear-gradient(135deg, rgba(0, 64, 255, 0.05), rgba(0, 128, 255, 0.02));
+}
+
+.skill-category[data-theme="cyber"] {
+    border-color: rgba(255, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(51, 6, 6, 0.05), rgba(255, 0, 0, 0.02));
+}
+
+.skill-category:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(0, 212, 170, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.skill-category[data-theme="ai"]:hover {
+    border-color: rgba(0, 128, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 128, 255, 0.3);
+}
+
+.skill-category[data-theme="cyber"]:hover {
+    border-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.3);
+}
+
+.skill-category h3 {
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid rgba(0, 212, 170, 0.2);
+    text-align: center;
+    justify-content: center;
+}
+
+/* Radar Chart Container */
+.skill-radar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.skill-radar-chart {
+    width: 280px;
+    height: 280px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.skill-radar-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Start from top */
+}
+
+/* Radar Grid Lines */
+.radar-grid {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 1;
+}
+
+.radar-axis {
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 1;
+}
+
+/* AI Theme Radar */
+.skill-category[data-theme="ai"] .radar-grid {
+    stroke: rgba(0, 128, 255, 0.15);
+}
+
+.skill-category[data-theme="ai"] .radar-axis {
+    stroke: rgba(0, 128, 255, 0.25);
+}
+
+/* Cyber Theme Radar */
+.skill-category[data-theme="cyber"] .radar-grid {
+    stroke: rgba(255, 0, 0, 0.15);
+}
+
+.skill-category[data-theme="cyber"] .radar-axis {
+    stroke: rgba(255, 0, 0, 0.25);
+}
+
+/* Skill Area Fill */
+.skill-area {
+    fill: rgba(0, 212, 170, 0.15);
+    stroke: rgba(0, 212, 170, 0.6);
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.skill-category[data-theme="ai"] .skill-area {
+    fill: rgba(0, 128, 255, 0.15);
+    stroke: rgba(0, 128, 255, 0.8);
+}
+
+.skill-category[data-theme="cyber"] .skill-area {
+    fill: rgba(255, 0, 0, 0.15);
+    stroke: rgba(255, 0, 0, 0.8);
+}
+
+.skill-category:hover .skill-area {
+    fill: rgba(0, 212, 170, 0.25);
+    stroke: rgba(0, 212, 170, 0.9);
+}
+
+.skill-category[data-theme="ai"]:hover .skill-area {
+    fill: rgba(0, 128, 255, 0.25);
+    stroke: rgba(0, 128, 255, 1);
+}
+
+.skill-category[data-theme="cyber"]:hover .skill-area {
+    fill: rgba(255, 0, 0, 0.25);
+    stroke: rgba(255, 0, 0, 1);
+}
+
+/* Skill Points */
+.skill-point {
+    fill: rgba(255, 255, 255, 0.9);
+    stroke: rgba(0, 212, 170, 0.8);
+    stroke-width: 2;
+    r: 4;
+    transition: all 0.3s ease;
+}
+
+.skill-category[data-theme="ai"] .skill-point {
+    stroke: rgba(0, 128, 255, 0.8);
+}
+
+.skill-category[data-theme="cyber"] .skill-point {
+    stroke: rgba(255, 0, 0, 0.8);
+}
+
+.skill-point:hover {
+    r: 6;
+    fill: rgba(255, 255, 255, 1);
+}
+
+/* Skill Labels */
+.skill-label {
+    fill: rgba(255, 255, 255, 0.8);
+    font-size: 11px;
+    font-weight: 500;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+.skill-label:hover {
+    fill: rgba(255, 255, 255, 1);
+    font-size: 12px;
+}
+
+/* Skill Legend */
+.skill-legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.skill-legend-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.skill-legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 212, 170, 0.8);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.skill-category[data-theme="ai"] .skill-legend-color {
+    border-color: rgba(0, 128, 255, 0.8);
+}
+
+.skill-category[data-theme="cyber"] .skill-legend-color {
+    border-color: rgba(255, 0, 0, 0.8);
+}
+
+.skill-legend-text {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.skill-legend-value {
+    font-size: 0.75rem;
+    color: rgba(0, 212, 170, 0.8);
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.skill-category[data-theme="ai"] .skill-legend-value {
+    color: rgba(0, 128, 255, 0.8);
+}
+
+.skill-category[data-theme="cyber"] .skill-legend-value {
+    color: rgba(255, 0, 0, 0.8);
+}
+
+/* Stats Summary */
+.skill-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-stat {
+    text-align: center;
+}
+
+.skill-stat-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(0, 212, 170, 0.9);
+    display: block;
+}
+
+.skill-category[data-theme="ai"] .skill-stat-value {
+    color: rgba(0, 128, 255, 0.9);
+}
+
+.skill-category[data-theme="cyber"] .skill-stat-value {
+    color: rgba(255, 51, 51, 0.9);
+}
+
+.skill-stat-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.2rem;
+}
+
+/* Project Components */
+.project-card h3 {
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.project-card p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.project-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Contact Components */
+.contact-info {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 212, 170, 0.15);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+    width: 20px;
+}
+
+/* Experience Components */
+.experience-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 170, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.experience-card h3 {
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+}
+
+.experience-card .meta {
+    color: rgba(0, 212, 170, 0.9);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.experience-card ul {
+    margin: 0.8rem 0;
+    margin-left: 1.2rem;
+}
+
+.experience-card li {
+    margin-bottom: 0.4rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Floating Elements */
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(0, 212, 170, 0.3);
+    border-radius: 50%;
+    animation: float 20s infinite linear;
+    box-shadow: 0 0 10px rgba(0, 212, 170, 0.5);
+}
+
+/* Icons */
+.icon {
+    margin-right: 0.5rem;
+    color: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(0, 212, 170, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 212, 170, 0.6);
+    }
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-highlight {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.8rem; }
+.mb-2 { margin-bottom: 1.5rem; }
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.slide-up {
+    animation: slideInUp 0.8s ease-out;
+}
+
+.glow-effect {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .skill-category {
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .skill-category h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        padding-bottom: 0.4rem;
+    }
+
+    .skill-item {
+        padding: 0.5rem 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .skill-item span {
+        font-size: 0.8rem;
+        flex: 1;
+    }
+
+    .skill-bar {
+        margin-left: 0.5rem;
+        width: 60px;
+        min-width: 60px;
+        height: 4px;
+    }
+
+    .social-links {
+        gap: 0.8rem;
+    }
+
+    .project-links {
+        justify-content: center;
+    }
+
+    .tech-tags {
+        justify-content: center;
+    }
+
+    .contact-info {
+        padding: 1.2rem;
+        margin: 0 1rem;
+    }
+
+    .skill-radar-chart {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .skill-legend {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+        padding: 0.8rem;
+    }
+    
+    .skill-label {
+        font-size: 10px;
+    }
+    
+    .skill-stats {
+        padding: 0.6rem;
+    }
+    
+    .skill-stat-value {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card,
+    .experience-card {
+        padding: 1rem;
+        margin: 0.8rem;
+    }
+
+    .tech-tags {
+        gap: 0.4rem;
+    }
+
+    .project-links {
+        gap: 0.6rem;
+    }
+
+    .skill-radar-chart {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .skill-category h3 {
+        font-size: 1rem;
+    }
+    
+    .skill-legend-text {
+        font-size: 0.75rem;
+    }
+    
+    .skill-legend-value {
+        font-size: 0.7rem;
+    }
+}
+
+/* Authentic Spotify Style - Formación Académica */
+.spotify-section {
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.9) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.spotify-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.spotify-header {
+    margin-bottom: 2rem;
+}
+
+.spotify-header h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.04em;
+}
+
+.spotify-subtitle {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.spotify-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.spotify-card {
+    background: rgba(40, 40, 40, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.spotify-card:hover {
+    background: rgba(60, 60, 60, 0.8);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.spotify-card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.spotify-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.spotify-card:hover .spotify-card-image img {
+    transform: scale(1.05);
+}
+
+.spotify-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.spotify-card:hover .spotify-overlay {
+    opacity: 1;
+}
+
+.spotify-play-btn {
+    width: 56px;
+    height: 56px;
+    background: #1DB954;
+    border: none;
+    border-radius: 50%;
+    color: #000;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(8px);
+    box-shadow: 0 8px 16px rgba(29, 185, 84, 0.3);
+}
+
+.spotify-card:hover .spotify-play-btn {
+    transform: translateY(0) scale(1.05);
+    box-shadow: 0 12px 24px rgba(29, 185, 84, 0.4);
+}
+
+.spotify-play-btn:hover {
+    transform: translateY(0) scale(1.1);
+    background: #1ed760;
+}
+
+.spotify-play-btn i {
+    margin-left: 2px; /* Center the play icon */
+}
+
+.spotify-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.spotify-card:hover .spotify-gradient {
+    opacity: 1;
+}
+
+.spotify-card-content {
+    padding: 0;
+}
+
+.spotify-title {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.spotify-artist {
+    color: #b3b3b3;
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin: 0 0 0.5rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.spotify-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.spotify-year {
+    color: #b3b3b3;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.spotify-grade {
+    background: linear-gradient(135deg, #1DB954, #1ed760);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Spotify Modal */
+.spotify-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
+}
+
+.spotify-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spotify-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.spotify-modal-content {
+    background: linear-gradient(135deg, rgba(18, 18, 18, 0.95), rgba(40, 40, 40, 0.95));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-radius: 16px;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    margin: 2rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spotify-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.spotify-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.spotify-modal-header {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: flex-start;
+}
+
+.spotify-modal-cover {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+}
+
+.spotify-modal-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spotify-modal-play {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    background: #1DB954;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 16px rgba(29, 185, 84, 0.4);
+}
+
+.spotify-modal-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.spotify-modal-type {
+    color: #b3b3b3;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.spotify-modal-info h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.spotify-modal-artist {
+    color: #b3b3b3;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+}
+
+.spotify-modal-description {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.spotify-modal-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.spotify-stat {
+    text-align: center;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spotify-stat-label {
+    color: #b3b3b3;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.spotify-stat-value {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.spotify-modal-skills {
+    padding: 0 2rem 2rem;
+}
+
+.spotify-modal-skills h3 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.spotify-skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.spotify-skill-tag {
+    background: linear-gradient(135deg, #1DB954, #1ed760);
+    color: #000;
+    padding: 0.4rem 0.8rem;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .spotify-section {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .spotify-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    
+    .spotify-card {
+        padding: 0.8rem;
+    }
+    
+    .spotify-modal-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .spotify-modal-cover {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .spotify-modal-content {
+        margin: 1rem;
+        max-height: 90vh;
+    }
+    
+    .spotify-modal-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .spotify-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+    
+    .spotify-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .spotify-modal-info h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Certifications Section */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.certification-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(0, 212, 170, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(0, 212, 170, 0.2);
+}
+
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.cert-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.cert-status {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-active {
+    color: #28a745;
+    background: rgba(40, 167, 69, 0.2);
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.status-expired {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.2);
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.cert-content {
+    margin-top: 1rem;
+}
+
+.cert-title {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.cert-issuer {
+    color: rgba(0, 212, 170, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.cert-dates {
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cert-issued,
+.cert-expiry {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.cert-issued::before {
+    content: "📅";
+    margin-right: 0.5rem;
+}
+
+.cert-expiry::before {
+    content: "⏰";
+    margin-right: 0.5rem;
+}
+
+.cert-actions {
+    margin-top: 1.2rem;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.cert-btn {
+    background: rgba(0, 212, 170, 0.2);
+    border: 1px solid rgba(0, 212, 170, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cert-btn:hover {
+    background: rgba(0, 212, 170, 0.3);
+    border-color: rgba(0, 212, 170, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 212, 170, 0.3);
+}
+
+.cert-btn i {
+    font-size: 0.9rem;
+}
+
+/* Microsoft brand color for Azure certifications */
+.certification-card[data-cert-id="azure-ai-102"] {
+    border-color: rgba(0, 120, 212, 0.2);
+}
+
+.certification-card[data-cert-id="azure-ai-102"]:hover {
+    border-color: rgba(0, 120, 212, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(0, 120, 212, 0.2);
+}
+
+.certification-card[data-cert-id="azure-ai-102"] .cert-btn {
+    background: rgba(0, 120, 212, 0.2);
+    border-color: rgba(0, 120, 212, 0.3);
+}
+
+.certification-card[data-cert-id="azure-ai-102"] .cert-btn:hover {
+    background: rgba(0, 120, 212, 0.3);
+    border-color: rgba(0, 120, 212, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);
+}
+
+/* Responsive design for certifications */
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+    
+    .certification-card {
+        padding: 1.2rem;
+    }
+    
+    .cert-title {
+        font-size: 1.1rem;
+    }
+    
+    .cert-actions {
+        flex-direction: column;
+    }
+    
+    .cert-btn {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cert-header {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+    
+    .cert-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .certification-card {
+        padding: 1rem;
+    }
+}
+
+/* Certification Card Image Placeholders - Spotify Style */
+.cert-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cert-image-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.cert-image-placeholder .cert-type {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Microsoft Azure Certification */
+.microsoft-cert {
+    background: linear-gradient(135deg, #0078d4 0%, #106ebe 50%, #005a9e 100%);
+    box-shadow: inset 0 0 50px rgba(0, 120, 212, 0.3);
+}
+
+.microsoft-cert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+/* Security Certification (CISSP) */
+.security-cert {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #17a2b8 100%);
+    box-shadow: inset 0 0 50px rgba(40, 167, 69, 0.3);
+}
+
+.security-cert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+/* Ethical Hacking Certification (CEH) */
+.hacker-cert {
+    background: linear-gradient(135deg, #dc3545 0%, #e83e8c 50%, #6f42c1 100%);
+    box-shadow: inset 0 0 50px rgba(220, 53, 69, 0.3);
+}
+
+.hacker-cert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 25% 75%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 75% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+/* AI/TensorFlow Certification */
+.ai-cert {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #fbbc05 100%);
+    box-shadow: inset 0 0 50px rgba(66, 133, 244, 0.3);
+}
+
+.ai-cert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+/* OSINT Certification */
+.osint-cert {
+    background: linear-gradient(135deg, #6f42c1 0%, #495057 50%, #343a40 100%);
+    box-shadow: inset 0 0 50px rgba(111, 66, 193, 0.3);
+}
+
+.osint-cert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 35% 65%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 65% 35%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+/* Python Certification */
+.python-cert {
+    background: linear-gradient(135deg, #3776ab 0%, #ffd43b 50%, #306998 100%);
+    box-shadow: inset 0 0 50px rgba(55, 118, 171, 0.3);
+}
+
+.python-cert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(255, 212, 59, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+}
+
+/* Default Certification */
+.default-cert {
+    background: linear-gradient(135deg, #ffc107 0%, #fd7e14 50%, #dc3545 100%);
+    box-shadow: inset 0 0 50px rgba(255, 193, 7, 0.3);
+}
+
+.default-cert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 35% 65%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 65% 35%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+/* Certification Status Badges */
+.spotify-grade.active {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: #ffffff;
+}
+
+.spotify-grade.expired {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: #ffffff;
+}
+
+/* Certification Modal Placeholder */
+.cert-modal-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-modal-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.cert-modal-placeholder .cert-type {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Certification Modal Actions */
+.cert-modal-actions {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cert-action-btn {
+    background: linear-gradient(135deg, #1DB954, #1ed760);
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
+}
+
+.cert-action-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(29, 185, 84, 0.4);
+    background: linear-gradient(135deg, #1ed760, #17c653);
+}
+
+.cert-action-btn.secondary {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cert-action-btn.secondary:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced hover effects for certification cards */
+.spotify-card[data-cert-id]:hover .cert-image-placeholder {
+    transform: scale(1.05);
+}
+
+.spotify-card[data-cert-id]:hover .microsoft-cert {
+    box-shadow: 
+        inset 0 0 60px rgba(0, 120, 212, 0.4),
+        0 0 30px rgba(0, 120, 212, 0.3);
+}
+
+.spotify-card[data-cert-id]:hover .security-cert {
+    box-shadow: 
+        inset 0 0 60px rgba(40, 167, 69, 0.4),
+        0 0 30px rgba(40, 167, 69, 0.3);
+}
+
+.spotify-card[data-cert-id]:hover .hacker-cert {
+    box-shadow: 
+        inset 0 0 60px rgba(220, 53, 69, 0.4),
+        0 0 30px rgba(220, 53, 69, 0.3);
+}
+
+.spotify-card[data-cert-id]:hover .ai-cert {
+    box-shadow: 
+        inset 0 0 60px rgba(66, 133, 244, 0.4),
+        0 0 30px rgba(66, 133, 244, 0.3);
+}
+
+.spotify-card[data-cert-id]:hover .osint-cert {
+    box-shadow: 
+        inset 0 0 60px rgba(111, 66, 193, 0.4),
+        0 0 30px rgba(111, 66, 193, 0.3);
+}
+
+.spotify-card[data-cert-id]:hover .python-cert {
+    box-shadow: 
+        inset 0 0 60px rgba(55, 118, 171, 0.4),
+        0 0 30px rgba(55, 118, 171, 0.3);
+}
+
+.spotify-card[data-cert-id]:hover .default-cert {
+    box-shadow: 
+        inset 0 0 60px rgba(255, 193, 7, 0.4),
+        0 0 30px rgba(255, 193, 7, 0.3);
+}
+
+/* Responsive adjustments for certification placeholders */
+@media (max-width: 768px) {
+    .cert-image-placeholder i {
+        font-size: 2.5rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .cert-image-placeholder .cert-type {
+        font-size: 0.7rem;
+    }
+    
+    .cert-modal-placeholder i {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .cert-modal-placeholder .cert-type {
+        font-size: 0.9rem;
+    }
+    
+    .cert-modal-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cert-action-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cert-image-placeholder i {
+        font-size: 2rem;
+    }
+    
+    .cert-image-placeholder .cert-type {
+        font-size: 0.6rem;
+    }
+}
+
+/* Hero Banner Styles */
+.hero-banner {
+    margin: 2rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-banner-content {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.hero-banner-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(0, 212, 170, 0.1) 0%, 
+        rgba(0, 128, 255, 0.05) 50%, 
+        rgba(46, 125, 50, 0.1) 100%);
+    z-index: -1;
+}
+
+.hero-banner-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 212, 170, 0.3);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+}
+
+.hero-banner-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 250px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.hero-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hero-banner-content:hover .hero-banner-image img {
+    transform: scale(1.05);
+}
+
+.hero-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(0, 212, 170, 0.2) 0%, 
+        rgba(0, 0, 0, 0.3) 50%, 
+        rgba(0, 128, 255, 0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-banner-content:hover .hero-banner-overlay {
+    opacity: 1;
+}
+
+.hero-banner-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 1rem;
+}
+
+.banner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #0078d4, #106ebe);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    align-self: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 120, 212, 0.3);
+    animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 120, 212, 0.3);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 120, 212, 0.5);
+    }
+}
+
+.banner-badge i {
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.banner-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.banner-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.banner-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.banner-stat {
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.banner-stat:hover {
+    background: rgba(0, 120, 212, 0.1);
+    border-color: rgba(0, 120, 212, 0.3);
+    transform: translateY(-2px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0078d4;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 2px 8px rgba(0, 120, 212, 0.5);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* Responsive Design for Hero Banner */
+@media (max-width: 968px) {
+    .hero-banner-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .hero-banner-image {
+        height: 200px;
+        order: -1;
+    }
+    
+    .hero-banner-info {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .banner-title {
+        font-size: 1.5rem;
+    }
+    
+    .banner-subtitle {
+        font-size: 1rem;
+    }
+    
+    .banner-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .banner-stat {
+        padding: 0.8rem 0.3rem;
+    }
+    
+    .stat-number {
+        font-size: 1.3rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        margin: 1.5rem 0;
+    }
+    
+    .hero-banner-content {
+        padding: 1.2rem;
+    }
+    
+    .hero-banner-image {
+        height: 180px;
+    }
+    
+    .banner-title {
+        font-size: 1.3rem;
+    }
+    
+    .banner-stats {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        max-width: 200px;
+        margin: 1rem auto 0;
+    }
+    
+    .banner-stat {
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner-content {
+        padding: 1rem;
+        border-radius: 16px;
+    }
+    
+    .hero-banner-image {
+        height: 150px;
+        border-radius: 12px;
+    }
+    
+    .banner-title {
+        font-size: 1.2rem;
+    }
+    
+    .banner-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .banner-badge {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    .stat-number {
+        font-size: 1.1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* Enhanced Project Cards with Image Support */
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 170, 0.1);
+    border-radius: 20px;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 212, 170, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Image Container */
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Special styling for GIF images */
+.project-gif {
+    border-radius: 20px 20px 0 0;
+}
+
+/* Project Overlay */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 212, 170, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Project Play Button */
+.project-play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 212, 170, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+}
+
+.project-card:hover .project-play-btn {
+    transform: scale(1);
+    background: rgba(0, 212, 170, 1);
+}
+
+/* Project Content */
+.project-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.project-content p {
+    margin: 0 0 1rem 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    flex: 1;
+}
+
+/* Tech Tags in Project Cards */
+.project-content .tech-tags {
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.project-content .tech-tag {
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid rgba(0, 212, 170, 0.2);
+    color: rgba(0, 212, 170, 0.9);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin: 0.25rem 0.25rem 0.25rem 0;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.project-content .tech-tag:hover {
+    background: rgba(0, 212, 170, 0.2);
+    border-color: rgba(0, 212, 170, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Project Links */
+.project-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.project-links .btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid rgba(0, 212, 170, 0.2);
+    color: rgba(0, 212, 170, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.project-links .btn:hover {
+    background: rgba(0, 212, 170, 0.2);
+    border-color: rgba(0, 212, 170, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 212, 170, 0.2);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    .project-content {
+        padding: 1rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Professional Timeline Styles - MODERN PREMIUM REDESIGN */
+.timeline-section {
+    margin: 3rem 0;
+    position: relative;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.1) 0%, 
+        rgba(0, 0, 0, 0.05) 50%, 
+        rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 25px;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.timeline-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(0, 128, 255, 0.02) 0%, 
+        transparent 25%, 
+        rgba(255, 0, 0, 0.02) 50%, 
+        transparent 75%, 
+        rgba(0, 128, 255, 0.02) 100%);
+    border-radius: 25px;
+    z-index: -1;
+}
+
+/* Timeline Header Styles */
+.timeline-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-header h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-header .icon {
+    background: linear-gradient(135deg, #0080ff, #ff0040);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(0, 128, 255, 0.5));
+}
+
+.timeline-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeline Container - Modern Grid Layout */
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Company Logos - Premium Cards */
+.company-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Company-specific branding */
+.timeline-item[data-company="bbva"] .company-logo {
+    background: linear-gradient(135deg, #004481, #0066cc);
+    border: 2px solid rgba(0, 68, 129, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 68, 129, 0.4);
+}
+
+.timeline-item[data-company="ecoembes"] .company-logo {
+    background: linear-gradient(135deg, #4caf50, #66bb6a);
+    border: 2px solid rgba(76, 175, 80, 0.5);
+    box-shadow: 0 15px 40px rgba(76, 175, 80, 0.4);
+}
+
+.timeline-item[data-company="capgemini"] .company-logo {
+    background: linear-gradient(135deg, #0070ad, #004d7a);
+    border: 2px solid rgba(0, 112, 173, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 112, 173, 0.4);
+}
+
+.company-logo:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Timeline Items - Premium Card Design */
+.timeline-item {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.08) 0%, 
+        rgba(255, 255, 255, 0.04) 50%, 
+        rgba(255, 255, 255, 0.08) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideInFromBottom 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+
+.timeline-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.25),
+        0 0 50px rgba(0, 128, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Company-specific hover effects */
+.timeline-item[data-company="bbva"]:hover {
+    box-shadow: 
+        0 30px 80px rgba(0, 68, 129, 0.3),
+        0 0 50px rgba(0, 68, 129, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(0, 68, 129, 0.3);
+}
+
+.timeline-item[data-company="ecoembes"]:hover {
+    box-shadow: 
+        0 30px 80px rgba(76, 175, 80, 0.3),
+        0 0 50px rgba(76, 175, 80, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(76, 175, 80, 0.3);
+}
+
+.timeline-item[data-company="capgemini"]:hover {
+    box-shadow: 
+        0 30px 80px rgba(0, 112, 173, 0.3),
+        0 0 50px rgba(0, 112, 173, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(0, 112, 173, 0.3);
+}
+
+/* Hidden elements - clean design */
+.timeline-dot,
+.timeline-dot-inner,
+.timeline-dot-text {
+    display: none;
+}
+
+/* Company Info Layout - Modern Header */
+.timeline-company {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.company-info {
+    flex: 1;
+}
+
+.position-title {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.company-name {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Duration Visualization - Modern Badge */
+.duration-visual {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+}
+
+.duration-bar {
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.1));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.8rem 1.2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.duration-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeline Meta - Clean Info Layout */
+.timeline-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-meta span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.timeline-meta span:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.timeline-meta i {
+    color: rgba(0, 128, 255, 0.8);
+    width: 16px;
+    font-size: 0.9rem;
+}
+
+/* Timeline Description - Enhanced Content */
+.timeline-description {
+    margin-top: 1.5rem;
+}
+
+.main-description {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.2) 0%, 
+        rgba(0, 0, 0, 0.1) 100%);
+    border-left: 4px solid rgba(0, 128, 255, 0.6);
+    border-radius: 0 15px 15px 0;
+    position: relative;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.main-description::before {
+    content: '💼';
+    position: absolute;
+    left: -2px;
+    top: -5px;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.8);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(0, 128, 255, 0.6);
+}
+
+/* Timeline Summary - Modern Stats */
+.timeline-summary {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.3) 0%, 
+        rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(0, 128, 255, 0.8), 
+        rgba(255, 0, 100, 0.8), 
+        rgba(0, 255, 150, 0.8));
+    border-radius: 20px 20px 0 0;
+}
+
+.summary-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 128, 255, 0.6), 
+        transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.highlight-item:hover::before {
+    transform: translateX(100%);
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-number {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: rgba(0, 128, 255, 1);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(0, 128, 255, 0.6);
+    display: block;
+    line-height: 1;
+}
+
+.highlight-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Timeline Expand Button - Modern CTA */
+.timeline-expand-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, 
+        rgba(0, 128, 255, 0.15), 
+        rgba(0, 64, 255, 0.1));
+    border: 2px solid rgba(0, 128, 255, 0.3);
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: rgba(0, 128, 255, 1);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 128, 255, 0.2);
+}
+
+.timeline-expand-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left 0.6s ease;
+}
+
+.timeline-expand-btn:hover::before {
+    left: 100%;
+}
+
+.timeline-expand-btn:hover {
+    background: linear-gradient(135deg, 
+        rgba(0, 128, 255, 0.25), 
+        rgba(0, 64, 255, 0.2));
+    border-color: rgba(0, 128, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 50px rgba(0, 128, 255, 0.4);
+    color: #ffffff;
+}
+
+.timeline-expand-btn .expand-icon {
+    transition: transform 0.4s ease;
+    font-size: 1rem;
+}
+
+.timeline-expand-btn.expanded .expand-icon {
+    transform: rotate(180deg);
+}
+
+/* Timeline Details - Expandable Content */
+.timeline-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.timeline-details.expanded {
+    max-height: 3000px;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 2rem;
+}
+
+/* Achievements Grid - Modern Card Layout */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.achievement-card {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.08), 
+        rgba(255, 255, 255, 0.03));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(0, 128, 255, 0.8), 
+        rgba(255, 0, 100, 0.8));
+    border-radius: 20px 20px 0 0;
+}
+
+.achievement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.12), 
+        rgba(255, 255, 255, 0.06));
+}
+
+.achievement-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, 
+        rgba(0, 128, 255, 0.2), 
+        rgba(0, 64, 255, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: rgba(0, 128, 255, 1);
+    margin-bottom: 1.5rem;
+    border: 2px solid rgba(0, 128, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 128, 255, 0.2);
+}
+
+.achievement-card h5 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.achievement-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.achievement-card li {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.achievement-card li::before {
+    content: '⚡';
+    position: absolute;
+    left: 0;
+    color: rgba(0, 128, 255, 0.8);
+    font-size: 0.8rem;
+    top: 2px;
+}
+
+/* Tech Stack - Modern Tags */
+.tech-stack {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.2), 
+        rgba(0, 0, 0, 0.1));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-stack h6 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tech-stack .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.tech-stack .tech-tag {
+    background: linear-gradient(135deg, 
+        rgba(0, 128, 255, 0.15), 
+        rgba(0, 64, 255, 0.1));
+    border: 1px solid rgba(0, 128, 255, 0.3);
+    color: rgba(0, 128, 255, 1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.tech-stack .tech-tag:hover {
+    background: linear-gradient(135deg, 
+        rgba(0, 128, 255, 0.25), 
+        rgba(0, 64, 255, 0.2));
+    border-color: rgba(0, 128, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 128, 255, 0.3);
+    color: #ffffff;
+}
+
+/* Animations */
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation for achievement cards */
+.timeline-details.expanded .achievement-card {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.timeline-details.expanded .achievement-card:nth-child(1) { animation-delay: 0.1s; }
+.timeline-details.expanded .achievement-card:nth-child(2) { animation-delay: 0.2s; }
+.timeline-details.expanded .achievement-card:nth-child(3) { animation-delay: 0.3s; }
+.timeline-details.expanded .achievement-card:nth-child(4) { animation-delay: 0.4s; }
+.timeline-details.expanded .achievement-card:nth-child(5) { animation-delay: 0.5s; }
+
+.timeline-details.expanded .tech-stack {
+    animation: slideInUp 0.6s ease-out 0.6s both;
+}

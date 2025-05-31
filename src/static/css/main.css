@@ -1,0 +1,291 @@
+/*
+Main stylesheet for AI & Cybersecurity Portfolio
+Professional color scheme with tech-focused palette - Minimalist Version
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Microsoft Official Color Palette */
+    --primary-color: #0078d4;           /* Microsoft Blue */
+    --secondary-color: #106ebe;         /* Microsoft Blue Dark */
+    --accent-color: #40e0d0;            /* Complementary Cyan */
+    --success-color: #107c10;           /* Microsoft Green */
+    --warning-color: #ffb900;           /* Microsoft Yellow */
+    --error-color: #d13438;             /* Microsoft Red */
+    
+    /* Corporate Background */
+    --bg-primary: linear-gradient(135deg, 
+        rgba(16, 110, 190, 0.95) 0%,    /* Microsoft Blue Dark */
+        rgba(0, 120, 212, 0.85) 25%,    /* Microsoft Blue */
+        rgba(32, 146, 213, 0.75) 50%,   /* Microsoft Blue Light */
+        rgba(16, 110, 190, 0.85) 75%,   /* Microsoft Blue Dark */
+        rgba(0, 120, 212, 0.95) 100%    /* Microsoft Blue */
+    );
+    
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, #0078d4, #106ebe);
+    --gradient-secondary: linear-gradient(135deg, #106ebe, #40e0d0);
+    --gradient-accent: linear-gradient(135deg, #40e0d0, #0078d4);
+    
+    /* Corporate Typography */
+    --font-primary: 'Segoe UI', 'Segoe UI Variable', system-ui, -apple-system, sans-serif;
+    --font-secondary: 'Cascadia Code', 'Fira Code', monospace;
+    
+    /* Professional Spacing */
+    --container-max-width: 1200px;
+    --section-padding: 4rem 0;
+    --border-radius: 8px;
+    --border-radius-large: 12px;
+    
+    /* Microsoft Shadows */
+    --shadow-subtle: 0 1.6px 3.6px rgba(0, 0, 0, 0.13), 0 0.3px 0.9px rgba(0, 0, 0, 0.11);
+    --shadow-medium: 0 6.4px 14.4px rgba(0, 0, 0, 0.13), 0 1.2px 3.6px rgba(0, 0, 0, 0.11);
+    --shadow-elevated: 0 25.6px 57.6px rgba(0, 0, 0, 0.22), 0 4.8px 14.4px rgba(0, 0, 0, 0.18);
+    
+    /* Professional Transitions */
+    --transition-fast: 0.15s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--bg-primary);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: rgba(0, 102, 204, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 102, 204, 0.25);
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    background: rgba(0, 212, 170, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 212, 170, 0.25);
+    border-color: rgba(0, 212, 170, 0.4);
+}
+
+.btn-primary {
+    background: rgba(0, 212, 170, 0.2);
+    border-color: rgba(0, 212, 170, 0.3);
+}
+
+.btn-primary:hover {
+    background: rgba(75, 172, 254, 0.25);
+    border-color: rgba(75, 172, 254, 0.4);
+    box-shadow: 0 8px 20px rgba(75, 172, 254, 0.25);
+}
+
+/* Tech-inspired animations */
+@keyframes textShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 170, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 212, 170, 0.7);
+}
+
+/* Main Content Layout - Adjusted for Sidebar Navigation */
+.main-content {
+    margin-top: 40px; /* Reduced from 80px since no header */
+    padding: 1.5rem 0;
+    transition: margin-left 0.3s ease;
+}
+
+/* Ensure content doesn't overlap with hamburger button */
+.hero {
+    padding-top: 2rem;
+}
+
+.hero .container {
+    padding-left: 2rem; /* Space for hamburger button */
+}
+
+/* Hero Section Styles */
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* Remove old header styles */
+header {
+    display: none; /* Hide the old header completely */
+}
+
+/* Responsive adjustments for sidebar */
+@media (max-width: 768px) {
+    .hero .container {
+        padding-left: 1rem;
+    }
+    
+    .main-content {
+        margin-top: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero .container {
+        padding-left: 0.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+} 

