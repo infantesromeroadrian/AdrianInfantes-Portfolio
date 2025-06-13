@@ -310,45 +310,77 @@ Grid layouts, skills, projects, and specialized components - Minimalist Version
     animation: borderPulse 2s ease-in-out infinite;
 }
 
-/* Enhanced legend color dots with category-specific colors */
-.skill-category[data-category*="Programming Foundation"] .skill-legend-color {
-    border-color: rgba(52, 152, 219, 0.8);
-    background: rgba(52, 152, 219, 0.2);
+/* Enhanced legend icons with category-specific colors */
+.skill-category[data-category*="Programming Foundation"] .skill-legend-icon {
+    border-color: rgba(52, 152, 219, 0.3);
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05));
 }
 
-.skill-category[data-category*="ML & Deep Learning"] .skill-legend-color {
-    border-color: rgba(155, 89, 182, 0.8);
-    background: rgba(155, 89, 182, 0.2);
+.skill-category[data-category*="Programming Foundation"] .skill-legend-icon i {
+    color: rgba(52, 152, 219, 0.9);
 }
 
-.skill-category[data-category*="Generative AI & LLMs"] .skill-legend-color {
-    border-color: rgba(231, 76, 60, 0.8);
-    background: rgba(231, 76, 60, 0.2);
+.skill-category[data-category*="ML & Deep Learning"] .skill-legend-icon {
+    border-color: rgba(155, 89, 182, 0.3);
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(155, 89, 182, 0.05));
 }
 
-.skill-category[data-category*="AI Infrastructure & RAG"] .skill-legend-color {
-    border-color: rgba(26, 188, 156, 0.8);
-    background: rgba(26, 188, 156, 0.2);
+.skill-category[data-category*="ML & Deep Learning"] .skill-legend-icon i {
+    color: rgba(155, 89, 182, 0.9);
 }
 
-.skill-category[data-category*="Cloud & MLOps"] .skill-legend-color {
-    border-color: rgba(52, 73, 94, 0.8);
-    background: rgba(52, 73, 94, 0.2);
+.skill-category[data-category*="Generative AI & LLMs"] .skill-legend-icon {
+    border-color: rgba(231, 76, 60, 0.3);
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.05));
 }
 
-.skill-category[data-category*="Data Visualization"] .skill-legend-color {
-    border-color: rgba(241, 196, 15, 0.8);
-    background: rgba(241, 196, 15, 0.2);
+.skill-category[data-category*="Generative AI & LLMs"] .skill-legend-icon i {
+    color: rgba(231, 76, 60, 0.9);
 }
 
-.skill-category[data-category*="Cybersecurity"] .skill-legend-color {
-    border-color: rgba(255, 0, 0, 0.8);
-    background: rgba(255, 0, 0, 0.2);
+.skill-category[data-category*="AI Infrastructure & RAG"] .skill-legend-icon {
+    border-color: rgba(26, 188, 156, 0.3);
+    background: linear-gradient(135deg, rgba(26, 188, 156, 0.1), rgba(26, 188, 156, 0.05));
 }
 
-.skill-category[data-category*="Backend & APIs"] .skill-legend-color {
-    border-color: rgba(103, 58, 183, 0.8);
-    background: rgba(103, 58, 183, 0.2);
+.skill-category[data-category*="AI Infrastructure & RAG"] .skill-legend-icon i {
+    color: rgba(26, 188, 156, 0.9);
+}
+
+.skill-category[data-category*="Cloud & MLOps"] .skill-legend-icon {
+    border-color: rgba(52, 73, 94, 0.3);
+    background: linear-gradient(135deg, rgba(52, 73, 94, 0.1), rgba(52, 73, 94, 0.05));
+}
+
+.skill-category[data-category*="Cloud & MLOps"] .skill-legend-icon i {
+    color: rgba(52, 73, 94, 0.9);
+}
+
+.skill-category[data-category*="Data Visualization"] .skill-legend-icon {
+    border-color: rgba(241, 196, 15, 0.3);
+    background: linear-gradient(135deg, rgba(241, 196, 15, 0.1), rgba(241, 196, 15, 0.05));
+}
+
+.skill-category[data-category*="Data Visualization"] .skill-legend-icon i {
+    color: rgba(241, 196, 15, 0.9);
+}
+
+.skill-category[data-category*="Cybersecurity"] .skill-legend-icon {
+    border-color: rgba(255, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.05));
+}
+
+.skill-category[data-category*="Cybersecurity"] .skill-legend-icon i {
+    color: rgba(255, 51, 51, 0.9);
+}
+
+.skill-category[data-category*="Backend & APIs"] .skill-legend-icon {
+    border-color: rgba(103, 58, 183, 0.3);
+    background: linear-gradient(135deg, rgba(103, 58, 183, 0.1), rgba(103, 58, 183, 0.05));
+}
+
+.skill-category[data-category*="Backend & APIs"] .skill-legend-icon i {
+    color: rgba(103, 58, 183, 0.9);
 }
 
 /* Theme filtering animation support */
@@ -546,20 +578,51 @@ Grid layouts, skills, projects, and specialized components - Minimalist Version
     background: rgba(255, 255, 255, 0.05);
 }
 
-.skill-legend-color {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid rgba(0, 212, 170, 0.8);
-    background: rgba(255, 255, 255, 0.9);
+.skill-legend-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.1), rgba(0, 212, 170, 0.05));
+    border: 1px solid rgba(0, 212, 170, 0.3);
+    transition: all 0.3s ease;
 }
 
-.skill-category[data-theme="ai"] .skill-legend-color {
-    border-color: rgba(0, 128, 255, 0.8);
+.skill-legend-icon i {
+    font-size: 12px;
+    color: rgba(0, 212, 170, 0.9);
+    transition: all 0.3s ease;
 }
 
-.skill-category[data-theme="cyber"] .skill-legend-color {
-    border-color: rgba(255, 0, 0, 0.8);
+.skill-legend-item:hover .skill-legend-icon {
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.2), rgba(0, 212, 170, 0.1));
+    border-color: rgba(0, 212, 170, 0.5);
+    transform: scale(1.1);
+}
+
+.skill-legend-item:hover .skill-legend-icon i {
+    color: rgba(0, 212, 170, 1);
+    transform: scale(1.1);
+}
+
+.skill-category[data-theme="ai"] .skill-legend-icon {
+    border-color: rgba(0, 128, 255, 0.3);
+    background: linear-gradient(135deg, rgba(0, 128, 255, 0.1), rgba(0, 128, 255, 0.05));
+}
+
+.skill-category[data-theme="ai"] .skill-legend-icon i {
+    color: rgba(0, 128, 255, 0.9);
+}
+
+.skill-category[data-theme="cyber"] .skill-legend-icon {
+    border-color: rgba(255, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 0, 0, 0.05));
+}
+
+.skill-category[data-theme="cyber"] .skill-legend-icon i {
+    color: rgba(255, 0, 0, 0.9);
 }
 
 .skill-legend-text {
@@ -2488,16 +2551,43 @@ Grid layouts, skills, projects, and specialized components - Minimalist Version
     box-shadow: 0 15px 40px rgba(0, 68, 129, 0.4);
 }
 
+/* BBVA logo image styling */
+.timeline-item[data-company="bbva"] .company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    padding: 8px;
+}
+
 .timeline-item[data-company="ecoembes"] .company-logo {
     background: linear-gradient(135deg, #4caf50, #66bb6a);
     border: 2px solid rgba(76, 175, 80, 0.5);
     box-shadow: 0 15px 40px rgba(76, 175, 80, 0.4);
 }
 
+/* Ecoembes logo image styling */
+.timeline-item[data-company="ecoembes"] .company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    padding: 8px;
+}
+
 .timeline-item[data-company="capgemini"] .company-logo {
     background: linear-gradient(135deg, #0070ad, #004d7a);
     border: 2px solid rgba(0, 112, 173, 0.5);
     box-shadow: 0 15px 40px rgba(0, 112, 173, 0.4);
+}
+
+/* Capgemini logo image styling */
+.timeline-item[data-company="capgemini"] .company-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    padding: 8px;
 }
 
 .company-logo:hover {

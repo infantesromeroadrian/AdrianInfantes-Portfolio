@@ -167,8 +167,8 @@ CORS_ALLOW_ALL_ORIGINS = DEBUG
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
+    "http://localhost:8002",
+    "http://127.0.0.1:8002",
 ]
 
 # Security settings

@@ -144,6 +144,14 @@ class PortfolioService:
         # Initialize featured projects
         featured_projects = [
             Project(
+                title="🚔 Europol Face Detection",
+                description="Advanced facial recognition and criminal identification system for EUROPOL. Features real-time face detection, criminal database matching, advanced RAG system for suspect information retrieval, and comprehensive law enforcement intelligence gathering capabilities.",
+                technologies=["Python", "OpenCV", "Face Recognition", "ChromaDB", "OpenAI GPT-4", "RAG", "Vector Search", "Flask", "Docker", "Criminal Intelligence", "EUROPOL API", "Computer Vision"],
+                github_url="https://github.com/infantesromeroadrian/minority-llm-europol-europol-ai",
+                demo_url="http://localhost:9320",
+                image_url="/static/images/20250613_2339_Futuristic Crime Search_simple_compose_01jxnkph13f1w8dh0w48e46rb2.gif"
+            ),
+            Project(
                 title="🤖 AI Agents Hospital",
                 description="Intelligent multi-agent hospital simulation system with AI agents specialized in different medical roles. Uses advanced prompt engineering and coordination between autonomous agents for realistic healthcare simulations.",
                 technologies=["Python", "LangChain", "OpenAI GPT-4", "Streamlit", "Multi-Agent Systems", "Healthcare AI", "Prompt Engineering", "Docker"],

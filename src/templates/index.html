@@ -457,7 +457,7 @@ tcpdump -i eth0 -w capture.pcap</div>
                                 <div class="timeline-content">
                                     <div class="timeline-company">
                                         <div class="company-logo">
-                                            <i class="fas fa-university"></i>
+                                            <img src="{% static 'images/unnamed.png' %}" alt="BBVA AI Factory" loading="lazy">
                                         </div>
                                         <div class="company-info">
                                             <h3 class="position-title">AI/ML Engineer - Senior</h3>
@@ -612,7 +612,7 @@ tcpdump -i eth0 -w capture.pcap</div>
                                 <div class="timeline-content">
                                     <div class="timeline-company">
                                         <div class="company-logo ecoembes-logo">
-                                            <i class="fas fa-recycle"></i>
+                                            <img src="{% static 'images/images.png' %}" alt="Ecoembes" loading="lazy">
                                         </div>
                                         <div class="company-info">
                                             <h3 class="position-title">Machine Learning Engineer - Mid</h3>
@@ -760,7 +760,7 @@ tcpdump -i eth0 -w capture.pcap</div>
                                 <div class="timeline-content">
                                     <div class="timeline-company">
                                         <div class="company-logo capgemini-logo">
-                                            <i class="fas fa-chart-bar"></i>
+                                            <img src="{% static 'images/images (1).png' %}" alt="Capgemini" loading="lazy">
                                         </div>
                                         <div class="company-info">
                                             <h3 class="position-title">Data Scientist - Junior</h3>
@@ -1123,7 +1123,101 @@ tcpdump -i eth0 -w capture.pcap</div>
                             <div class="skill-legend">
                                 {% for skill in skills %}
                                 <div class="skill-legend-item" data-skill="{{ skill.name }}">
-                                    <div class="skill-legend-color"></div>
+                                    <div class="skill-legend-icon">
+                                        {% if skill.name == "Python" %}
+                                            <i class="fab fa-python"></i>
+                                        {% elif skill.name == "JavaScript" %}
+                                            <i class="fab fa-js-square"></i>
+                                        {% elif skill.name == "SQL" %}
+                                            <i class="fas fa-database"></i>
+                                        {% elif skill.name == "HTML/CSS" %}
+                                            <i class="fab fa-html5"></i>
+                                        {% elif skill.name == "Docker" %}
+                                            <i class="fab fa-docker"></i>
+                                        {% elif skill.name == "Git" or skill.name == "GitHub" %}
+                                            <i class="fab fa-git-alt"></i>
+                                        {% elif skill.name == "AWS" %}
+                                            <i class="fab fa-aws"></i>
+                                        {% elif skill.name == "Node.js" %}
+                                            <i class="fab fa-node-js"></i>
+                                        {% elif skill.name == "React" %}
+                                            <i class="fab fa-react"></i>
+                                        {% elif skill.name == "Vue.js" %}
+                                            <i class="fab fa-vuejs"></i>
+                                        {% elif skill.name == "Angular" %}
+                                            <i class="fab fa-angular"></i>
+                                        {% elif skill.name == "Linux" or skill.name == "Kali Linux" %}
+                                            <i class="fab fa-linux"></i>
+                                        {% elif skill.name == "Windows" %}
+                                            <i class="fab fa-windows"></i>
+                                        {% elif skill.name == "Ubuntu" %}
+                                            <i class="fab fa-ubuntu"></i>
+                                        {% elif "Azure" in skill.name %}
+                                            <i class="fab fa-microsoft"></i>
+                                        {% elif "TensorFlow" in skill.name %}
+                                            <i class="fas fa-brain"></i>
+                                        {% elif "PyTorch" in skill.name %}
+                                            <i class="fas fa-fire"></i>
+                                        {% elif skill.name == "Pandas" or skill.name == "NumPy" or skill.name == "Polars" %}
+                                            <i class="fas fa-table"></i>
+                                        {% elif "Machine Learning" in skill.name or "scikit-learn" in skill.name %}
+                                            <i class="fas fa-robot"></i>
+                                        {% elif "OpenAI" in skill.name or "GPT" in skill.name %}
+                                            <i class="fas fa-comments"></i>
+                                        {% elif "Gemini" in skill.name or "Claude" in skill.name %}
+                                            <i class="fas fa-magic"></i>
+                                        {% elif "LangChain" in skill.name or "LangGraph" in skill.name %}
+                                            <i class="fas fa-link"></i>
+                                        {% elif "Hugging Face" in skill.name or "Transformers" in skill.name %}
+                                            <i class="fas fa-heart"></i>
+                                        {% elif "Vector" in skill.name or "Pinecone" in skill.name or "Chroma" in skill.name or "FAISS" in skill.name %}
+                                            <i class="fas fa-search-plus"></i>
+                                        {% elif "Embedding" in skill.name %}
+                                            <i class="fas fa-layer-group"></i>
+                                        {% elif "Kubernetes" in skill.name %}
+                                            <i class="fas fa-dharmachakra"></i>
+                                        {% elif "MLflow" in skill.name %}
+                                            <i class="fas fa-stream"></i>
+                                        {% elif "CI/CD" in skill.name %}
+                                            <i class="fas fa-code-branch"></i>
+                                        {% elif "Plotly" in skill.name or "Matplotlib" in skill.name or "Seaborn" in skill.name %}
+                                            <i class="fas fa-chart-line"></i>
+                                        {% elif "Streamlit" in skill.name %}
+                                            <i class="fas fa-bolt"></i>
+                                        {% elif "Tableau" in skill.name %}
+                                            <i class="fas fa-chart-bar"></i>
+                                        {% elif "Power BI" in skill.name %}
+                                            <i class="fas fa-chart-pie"></i>
+                                        {% elif "Penetration Testing" in skill.name or "Metasploit" in skill.name %}
+                                            <i class="fas fa-user-secret"></i>
+                                        {% elif "Vulnerability" in skill.name or "Security" in skill.name %}
+                                            <i class="fas fa-shield-alt"></i>
+                                        {% elif "Burp Suite" in skill.name or "OWASP" in skill.name %}
+                                            <i class="fas fa-bug"></i>
+                                        {% elif "Nmap" in skill.name %}
+                                            <i class="fas fa-network-wired"></i>
+                                        {% elif "Wireshark" in skill.name %}
+                                            <i class="fas fa-eye"></i>
+                                        {% elif "FastAPI" in skill.name %}
+                                            <i class="fas fa-lightning-bolt"></i>
+                                        {% elif "Flask" in skill.name %}
+                                            <i class="fas fa-flask"></i>
+                                        {% elif "Django" in skill.name %}
+                                            <i class="fab fa-python"></i>
+                                        {% elif "REST" in skill.name or "API" in skill.name %}
+                                            <i class="fas fa-exchange-alt"></i>
+                                        {% elif "GraphQL" in skill.name %}
+                                            <i class="fas fa-project-diagram"></i>
+                                        {% elif "Microservices" in skill.name %}
+                                            <i class="fas fa-cubes"></i>
+                                        {% elif "Spark" in skill.name %}
+                                            <i class="fas fa-fire-alt"></i>
+                                        {% elif "Redis" in skill.name %}
+                                            <i class="fas fa-memory"></i>
+                                        {% else %}
+                                            <i class="fas fa-cog"></i>
+                                        {% endif %}
+                                    </div>
                                     <span class="skill-legend-text">{{ skill.name }}</span>
                                     <span class="skill-legend-value">{{ skill.proficiency }}%</span>
                                 </div>

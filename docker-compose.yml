@@ -6,7 +6,7 @@ services:
     build: .
     container_name: portfolio-django-app
     ports:
-      - "8000:8000"
+      - "8002:8000"
     environment:
       - DEBUG=True
       - SECRET_KEY=django-dev-secret-key-change-in-production

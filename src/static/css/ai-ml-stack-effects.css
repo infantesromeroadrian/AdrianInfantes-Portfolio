@@ -3,57 +3,133 @@ AI/ML Stack Advanced Visual Effects
 Enhanced aesthetic styles for the restructured AI & ML technology stack
 */
 
-/* Technology-specific color coding */
-.skill-legend-item[data-skill*="Python"] .skill-legend-color {
-    background: linear-gradient(45deg, #3776ab, #ffd43b);
-    border-color: #3776ab;
+/* Technology-specific icon styling */
+.skill-legend-item[data-skill*="Python"] .skill-legend-icon {
+    background: linear-gradient(45deg, rgba(55, 118, 171, 0.15), rgba(255, 212, 59, 0.15));
+    border-color: rgba(55, 118, 171, 0.4);
 }
 
-.skill-legend-item[data-skill*="PyTorch"] .skill-legend-color {
-    background: linear-gradient(45deg, #ee4c2c, #ff6b35);
-    border-color: #ee4c2c;
+.skill-legend-item[data-skill*="Python"] .skill-legend-icon i {
+    color: #3776ab;
 }
 
-.skill-legend-item[data-skill*="TensorFlow"] .skill-legend-color {
-    background: linear-gradient(45deg, #ff6f00, #ffab00);
-    border-color: #ff6f00;
+.skill-legend-item[data-skill*="PyTorch"] .skill-legend-icon {
+    background: linear-gradient(45deg, rgba(238, 76, 44, 0.15), rgba(255, 107, 53, 0.15));
+    border-color: rgba(238, 76, 44, 0.4);
 }
 
-.skill-legend-item[data-skill*="OpenAI"] .skill-legend-color,
-.skill-legend-item[data-skill*="GPT"] .skill-legend-color {
-    background: linear-gradient(45deg, #10a37f, #1a7f64);
-    border-color: #10a37f;
+.skill-legend-item[data-skill*="PyTorch"] .skill-legend-icon i {
+    color: #ee4c2c;
 }
 
-.skill-legend-item[data-skill*="Gemini"] .skill-legend-color {
-    background: linear-gradient(45deg, #4285f4, #34a853);
-    border-color: #4285f4;
+.skill-legend-item[data-skill*="TensorFlow"] .skill-legend-icon {
+    background: linear-gradient(45deg, rgba(255, 111, 0, 0.15), rgba(255, 171, 0, 0.15));
+    border-color: rgba(255, 111, 0, 0.4);
 }
 
-.skill-legend-item[data-skill*="LangChain"] .skill-legend-color {
-    background: linear-gradient(45deg, #1c3aa9, #5865f2);
-    border-color: #1c3aa9;
+.skill-legend-item[data-skill*="TensorFlow"] .skill-legend-icon i {
+    color: #ff6f00;
 }
 
-.skill-legend-item[data-skill*="Azure"] .skill-legend-color {
-    background: linear-gradient(45deg, #0078d4, #106ebe);
-    border-color: #0078d4;
+.skill-legend-item[data-skill*="OpenAI"] .skill-legend-icon,
+.skill-legend-item[data-skill*="GPT"] .skill-legend-icon {
+    background: linear-gradient(45deg, rgba(16, 163, 127, 0.15), rgba(26, 127, 100, 0.15));
+    border-color: rgba(16, 163, 127, 0.4);
 }
 
-.skill-legend-item[data-skill*="Docker"] .skill-legend-color {
-    background: linear-gradient(45deg, #2496ed, #0db7ed);
-    border-color: #2496ed;
+.skill-legend-item[data-skill*="OpenAI"] .skill-legend-icon i,
+.skill-legend-item[data-skill*="GPT"] .skill-legend-icon i {
+    color: #10a37f;
 }
 
-.skill-legend-item[data-skill*="Kubernetes"] .skill-legend-color {
-    background: linear-gradient(45deg, #326ce5, #4285f4);
-    border-color: #326ce5;
+.skill-legend-item[data-skill*="Gemini"] .skill-legend-icon {
+    background: linear-gradient(45deg, rgba(66, 133, 244, 0.15), rgba(52, 168, 83, 0.15));
+    border-color: rgba(66, 133, 244, 0.4);
 }
 
-/* Simple hover effect for skill items */
+.skill-legend-item[data-skill*="Gemini"] .skill-legend-icon i {
+    color: #4285f4;
+}
+
+.skill-legend-item[data-skill*="LangChain"] .skill-legend-icon {
+    background: linear-gradient(45deg, rgba(28, 58, 169, 0.15), rgba(88, 101, 242, 0.15));
+    border-color: rgba(28, 58, 169, 0.4);
+}
+
+.skill-legend-item[data-skill*="LangChain"] .skill-legend-icon i {
+    color: #1c3aa9;
+}
+
+.skill-legend-item[data-skill*="Azure"] .skill-legend-icon {
+    background: linear-gradient(45deg, rgba(0, 120, 212, 0.15), rgba(16, 110, 190, 0.15));
+    border-color: rgba(0, 120, 212, 0.4);
+}
+
+.skill-legend-item[data-skill*="Azure"] .skill-legend-icon i {
+    color: #0078d4;
+}
+
+.skill-legend-item[data-skill*="Docker"] .skill-legend-icon {
+    background: linear-gradient(45deg, rgba(36, 150, 237, 0.15), rgba(13, 183, 237, 0.15));
+    border-color: rgba(36, 150, 237, 0.4);
+}
+
+.skill-legend-item[data-skill*="Docker"] .skill-legend-icon i {
+    color: #2496ed;
+}
+
+.skill-legend-item[data-skill*="Kubernetes"] .skill-legend-icon {
+    background: linear-gradient(45deg, rgba(50, 108, 229, 0.15), rgba(66, 133, 244, 0.15));
+    border-color: rgba(50, 108, 229, 0.4);
+}
+
+.skill-legend-item[data-skill*="Kubernetes"] .skill-legend-icon i {
+    color: #326ce5;
+}
+
+/* Enhanced hover effects for skill items with icons */
 .skill-legend-item:hover {
     background: rgba(255, 255, 255, 0.05);
     transition: all 0.2s ease;
+}
+
+/* Icon-specific hover animations */
+.skill-legend-item:hover .skill-legend-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.skill-legend-item:hover .skill-legend-icon i {
+    transform: scale(1.05);
+}
+
+/* Specific technology icon animations */
+.skill-legend-item[data-skill*="Python"]:hover .skill-legend-icon {
+    animation: pythonGlow 0.6s ease-in-out;
+}
+
+.skill-legend-item[data-skill*="Docker"]:hover .skill-legend-icon {
+    animation: dockerSpin 0.8s ease-in-out;
+}
+
+.skill-legend-item[data-skill*="Kubernetes"]:hover .skill-legend-icon {
+    animation: kubernetesPulse 0.6s ease-in-out;
+}
+
+@keyframes pythonGlow {
+    0%, 100% { box-shadow: 0 4px 12px rgba(55, 118, 171, 0.3); }
+    50% { box-shadow: 0 6px 20px rgba(255, 212, 59, 0.4); }
+}
+
+@keyframes dockerSpin {
+    0% { transform: scale(1.1) rotate(5deg); }
+    50% { transform: scale(1.15) rotate(180deg); }
+    100% { transform: scale(1.1) rotate(360deg); }
+}
+
+@keyframes kubernetesPulse {
+    0%, 100% { box-shadow: 0 4px 12px rgba(50, 108, 229, 0.3); }
+    50% { box-shadow: 0 8px 24px rgba(50, 108, 229, 0.6); }
 }
 
 /* Interactive skill stats with enhanced animations */
@@ -88,10 +164,77 @@ Enhanced aesthetic styles for the restructured AI & ML technology stack
     }
 }
 
+/* Additional technology-specific animations */
+.skill-legend-item[data-skill*="JavaScript"]:hover .skill-legend-icon {
+    animation: javascriptBounce 0.5s ease-in-out;
+}
+
+.skill-legend-item[data-skill*="TensorFlow"]:hover .skill-legend-icon {
+    animation: tensorflowGlow 0.7s ease-in-out;
+}
+
+.skill-legend-item[data-skill*="PyTorch"]:hover .skill-legend-icon {
+    animation: pytorchFlame 0.6s ease-in-out;
+}
+
+.skill-legend-item[data-skill*="OpenAI"]:hover .skill-legend-icon,
+.skill-legend-item[data-skill*="GPT"]:hover .skill-legend-icon {
+    animation: openaiPulse 0.8s ease-in-out infinite;
+}
+
+@keyframes javascriptBounce {
+    0%, 100% { transform: scale(1.1) rotate(5deg) translateY(0); }
+    50% { transform: scale(1.15) rotate(5deg) translateY(-3px); }
+}
+
+@keyframes tensorflowGlow {
+    0%, 100% { box-shadow: 0 4px 12px rgba(255, 111, 0, 0.3); }
+    50% { box-shadow: 0 8px 24px rgba(255, 171, 0, 0.6); }
+}
+
+@keyframes pytorchFlame {
+    0%, 100% { box-shadow: 0 4px 12px rgba(238, 76, 44, 0.4); }
+    25% { box-shadow: 0 6px 16px rgba(255, 107, 53, 0.5); }
+    50% { box-shadow: 0 8px 20px rgba(238, 76, 44, 0.6); }
+    75% { box-shadow: 0 6px 16px rgba(255, 107, 53, 0.5); }
+}
+
+@keyframes openaiPulse {
+    0%, 100% { box-shadow: 0 4px 12px rgba(16, 163, 127, 0.3); }
+    50% { box-shadow: 0 8px 24px rgba(26, 127, 100, 0.6); }
+}
+
+/* Icon size adjustments for specific technologies */
+.skill-legend-item[data-skill*="Kubernetes"] .skill-legend-icon i {
+    font-size: 14px; /* Slightly larger for Kubernetes wheel */
+}
+
+.skill-legend-item[data-skill*="Docker"] .skill-legend-icon i {
+    font-size: 13px; /* Optimal size for Docker whale */
+}
+
+.skill-legend-item[data-skill*="JavaScript"] .skill-legend-icon i {
+    font-size: 11px; /* Compact for JS square */
+}
+
 /* Responsive enhancements for mobile devices */
 @media (max-width: 768px) {
     .skill-legend-item:hover {
         transform: none; /* Simplify hover effects on touch devices */
+    }
+    
+    .skill-legend-item:hover .skill-legend-icon {
+        transform: scale(1.05); /* Reduced scale for mobile */
+        animation: none; /* Disable complex animations */
+    }
+    
+    .skill-legend-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .skill-legend-icon i {
+        font-size: 10px;
     }
 }
 
